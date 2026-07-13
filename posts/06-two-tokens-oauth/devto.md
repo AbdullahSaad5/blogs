@@ -1,0 +1,66 @@
+---
+title: Access vs Refresh Tokens: I Was Missing Two Ideas
+published: true
+description: I shipped a login API with one JWT that lived seven years and no way to revoke it, because the two-token access-and-refresh split made no sense to me. Here is what I was actually missing, and what the two tokens are really for.
+tags: oauth, security, webdev, authentication
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/nfc4xg5p1kmu1grchw86.png
+canonical_url:
+---
+
+Years ago I was building a login API, and a colleague looked at what I was returning and asked why I only had one token. He said the newer APIs hand back two, an access token and a refresh token. Mine returned one. So I asked him the obvious thing: why two? What does the second one buy you?
+
+He didn't really know either. He was a front-end dev, and he'd only ever seen the two tokens come back from the backend on a project he'd worked on. When he asked the person who built that side why there were two, all he got was "it's industry standard." That was the whole explanation. So he was passing that straight down to me: two tokens, that's just how it's done. He said he'd dig into the real reason and get back to me. Two developers standing there, and the actual why had already gone missing one hop up the chain, buried under "it's industry standard."
+
+So I did what a confused junior does when the fancy version doesn't make sense. I called it overhead and shipped the simple one. One token, a JWT, and because I didn't want to think about expiry I gave it a life of something like seven years. No revocation. Once it was signed and handed out, it was valid until roughly the next World Cup, and there was nothing I could do to kill it. The only reason that never blew up in my face is that the project never went to production. I didn't get smart, I got lucky.
+
+## Why two tokens made no sense to me
+
+The thing worth being honest about is exactly why I thought it was dumb, because the wrong mental model is the interesting part, not the right one.
+
+First, I thought the refresh token was just a longer-lived copy of the access token. Same thing, one lives longer. If they're the same thing, why carry two? Just use the long one.
+
+Then my colleague came back with the first real clue: the refresh token lives longer, and it's used rarely, only the access token gets sent on every request, so there's less chance of the refresh one getting stolen. And I remember pushing back on that, because "less chance of being stolen" sounded like a hand-wave. There's still a chance. If it can be stolen at all, and it's the long-lived one, then leaking it is worse, not better. That didn't sound like security, it sounded like hoping.
+
+And underneath both of those was a bigger assumption I didn't even know I was making: tokens are stateless. That's the whole selling point, right, the server doesn't store them, it just checks the signature. So the idea of revoking one made no sense to me. You can't reach out and kill a stateless token, there's nothing to kill. And if you did want that, we already have sessions for exactly that job, so why reinvent it worse.
+
+I also had never heard of scopes. It genuinely never occurred to me that a token could be restricted to one specific job. In my head a token meant "this is me, let me do things," full stop. So when I stacked all of that up, two tokens looked like ceremony. Two things that do the same job, one just lives longer, neither one killable, for a benefit I couldn't measure.
+
+## The two ideas I was actually missing
+
+None of this resolved quickly. For months after that conversation we just kept shipping the single-token approach, because it worked and we didn't know any better. We were a handful of junior devs with nobody above us to ask. We knew JWT was the standard tool for auth, so we used it the way we understood it, one token, and moved on. The question just sat there, unanswered, for months.
+
+It didn't click on the job. It clicked on YouTube, which is where I go when a thing refuses to make sense and I want to hear someone who actually gets it explain it.
+
+Two concepts landed in the same video and the whole thing fell over at once.
+
+The first was revocation. A token doesn't have to be a fire-and-forget thing you can never call back. If you store it, you can keep a list of the ones you've killed and refuse them. I'd been treating "stateless" as a law instead of a choice, and the moment it's a choice, killing a leaked token is just something you get to decide.
+
+The second was scopes. A token can be restricted to certain actions and nothing else. So the two tokens weren't two copies of the same authority after all. They could have different powers on purpose.
+
+Once I had those two pieces I ran every scenario in my head and it all just resolved, and honestly I started laughing at myself, because it was so easy. This was the same access-and-refresh split I'd bounced off when I first went reading about auth, back when none of the articles made sense. Nothing had changed. I'd just been missing two words. I went to my computer and built a small login, signup, and refresh flow as a demo, and I understood the entire thing end to end in under an hour.
+
+## So what are the two tokens actually for
+
+Here's the version I wish someone had handed me at the start.
+
+The access token is the one you send on every single request. Because it's everywhere, all the time, in headers, in logs if you're careless, on every hop, it's the one most likely to leak. So you make it cheap to lose. You give it a short life, minutes to an hour, and you scope it to just what it needs. It's a stateless JWT, so the server never looks it up, it just checks the signature and trusts it until it expires. That's what keeps it fast, and it's also why you don't try to kill an access token individually: you can't, so you lean on the short life instead. If a copy leaks, the damage is small and it ages out on its own fast.
+
+The refresh token has exactly one job: get a new access token. That's it. It can't read your data, it can't hit your endpoints, it does one thing. And here's the part I'd had backwards: the refresh token usually isn't a JWT at all. It's an opaque random string, a row in your database, and that's on purpose, because a row is a thing you can delete. That's what makes it revocable. It also only ever travels to one place, the single refresh endpoint, never your other routes, so its exposure is a sliver of what the access token's is. You send it rarely, only when the access token is about to run out, so there are fewer chances to leak it in the first place, and the moment you suspect it, you delete the row and it's dead on the next use.
+
+That finally answers the thing past-me couldn't get over: yes, the long-lived one can still be stolen, but it only works against that one refresh route, it's useless anywhere else, and it dies the instant you kill the row. The long life stops being scary once the thing is killable and can barely go anywhere.
+
+Where you keep it matters as much as any of this. The refresh token lives in a cryptographically signed, httpOnly cookie, which the browser will hand back only to your server and which JavaScript on the page can't read. What you never do is drop it in localStorage. Anything running on your page can read localStorage, and on a modern app that's a pile of npm packages you didn't write. One compromised dependency reads your token straight out of storage and walks off with it, and you won't get so much as a log line. A signed cookie closes that door.
+
+That's the piece I'd been missing. The refresh token is not a longer copy of the access token. It has a job the access token can't safely do. It keeps you logged in without making you re-type your password every hour, and it does that while staying killable. Short-lived thing you use constantly, long-lived thing you use almost never and can revoke on demand. Two different jobs, so two different tokens.
+
+And that split is the best-of-both trick I never saw coming. A session checks the database on every single request: safe, always current, but a lookup every time. A pure JWT checks nothing, ever: fast, but you can't call it back. Two tokens sit right between them. The access token is the no-lookup JWT on the hot path, so the requests that happen constantly stay fast, and the refresh token is the database-backed, revocable thing on the cold path that fires rarely. You get the speed of stateless where it's hot and the killability of sessions where it counts.
+
+## The honest part: you probably don't need it
+
+Now that I get it, I'm not going to pretend everyone should reach for two tokens. Most apps don't need this.
+
+For a normal app with sessions, one token is fine. Give it a sane life, seven or thirty days, and when it expires, ask the user to log in again. That's not a security hole, that's just a login. The two-token dance has a real cost: you're now refreshing tokens on a timer, maintaining a blacklist, handling the refresh failing, handling the race where two requests refresh at once. That's more moving parts, and every moving part is a new place for it to break.
+
+Notice that my seven-year JWT wasn't dumb because it was one token. It was dumb because it was unbounded and I couldn't kill it. A single token with a bounded life and a re-login is a perfectly reasonable design for most things I'd build today. Two tokens is what you reach for when the blast radius is big enough to earn the extra machinery: a big multi-tenant system, anything moving real money, anything where a leaked credential is expensive to clean up.
+
+If I could hand one sentence back to the guy shipping that seven-year token, it'd be this. Short access, long refresh, only the refresh can mint new ones. If the small one leaks, the damage window is tiny. If the long one leaks, you blacklist it. That's the whole thing, and it took me two words, revocation and scopes, to see it.

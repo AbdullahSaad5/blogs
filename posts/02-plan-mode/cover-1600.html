@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1600px;height:840px}
+body{background:radial-gradient(130% 150% at 0% 0%,#16213f 0%,#0d1117 60%);font-family:"Inter",-apple-system,sans-serif;color:#e6edf3;position:relative;overflow:hidden;display:flex;align-items:center;gap:64px;padding:0 96px}
+.grid{position:absolute;inset:0;background-image:radial-gradient(#ffffff10 1px,transparent 1.4px);background-size:30px 30px;-webkit-mask:linear-gradient(#000,transparent 82%)}
+.left{position:relative;z-index:2;flex:1.12}
+.eye{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:22px;letter-spacing:.2em;color:#7d8aa3;text-transform:uppercase;margin-bottom:30px}
+.eye .star{color:#58a6ff}
+h1{font-weight:800;font-size:72px;line-height:1.05;letter-spacing:-1.5px;margin-bottom:30px}
+h1 .b{color:#58a6ff}
+.desc{font-size:25px;line-height:1.5;color:#8b95a1;max-width:600px;margin-bottom:50px}
+.by{font-family:"JetBrains Mono",monospace;font-size:22px;color:#6e7a8f}
+.card{position:relative;z-index:2;flex:0.92;background:#11161f;border:1px solid #2a3140;border-radius:18px;padding:26px 26px 22px;box-shadow:0 30px 80px rgba(0,0,0,0.5)}
+.cardhead{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.dots{display:flex;gap:7px}.dot{width:13px;height:13px;border-radius:50%}
+.cardtitle{font-family:"JetBrains Mono",monospace;font-size:19px;color:#8b95a1;margin-left:6px}
+.pm{margin-left:auto;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:15px;letter-spacing:.08em;color:#58a6ff;background:#13315c;border:1px solid #1f4a86;padding:6px 12px;border-radius:7px}
+.row{display:flex;align-items:center;gap:13px;padding:15px 6px;border-top:1px solid #20262f}
+.num{width:30px;height:30px;border-radius:8px;background:#1c2330;border:1px solid #2a3140;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:16px;color:#8b95a1;flex:none}
+.lbl{flex:1;font-size:24px;color:#e6edf3;font-weight:500}
+.sf{font-family:"JetBrains Mono",monospace;font-size:15px;color:#e3b341;background:#2a2310;border:1px solid #5c4a1a;padding:4px 9px;border-radius:6px;flex:none}
+.badge{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:14px;letter-spacing:.06em;padding:5px 10px;border-radius:6px;flex:none}
+.must{color:#ff7b72;background:#2d1416;border:1px solid #6e2a2a}
+.should{color:#e3b341;background:#2a2310;border:1px solid #5c4a1a}
+.could{color:#8b95a1;background:#1c222b;border:1px solid #2a3140}
+.cfoot{margin-top:16px;padding-top:16px;border-top:1px solid #20262f;font-family:"JetBrains Mono",monospace;font-size:18px;color:#6e7a8f;text-align:center}
+</style></head><body>
+<div class="grid"></div>
+<div class="left">
+  <div class="eye"><span class="star">&#10022;</span> Agents that take real actions &nbsp;&middot;&nbsp; 02</div>
+  <h1>The hard part wasn't doing the work. <span class="b">It was planning it.</span></h1>
+  <div class="desc">Building plan mode: splitting the planner from the executor, and what reviewing a plan actually buys you.</div>
+  <div class="by">Syed Abdullah Saad</div>
+</div>
+<div class="card">
+  <div class="cardhead">
+    <div class="dots"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#27c93f"></span></div>
+    <span class="cardtitle">plan &middot; review before run</span>
+    <span class="pm">PLAN MODE</span>
+  </div>
+  <div class="row" style="border-top:none"><span class="num">1</span><span class="lbl">Read org schema</span><span class="sf">salesforce-1</span><span class="badge must">MUST</span></div>
+  <div class="row"><span class="num">2</span><span class="lbl">Create custom field</span><span class="badge must">MUST</span></div>
+  <div class="row"><span class="num">3</span><span class="lbl">Deploy LWC</span><span class="sf">salesforce-1</span><span class="badge should">SHOULD</span></div>
+  <div class="row"><span class="num">4</span><span class="lbl">Backfill records</span><span class="badge could">COULD</span></div>
+  <div class="cfoot">&#9208; pauses on destructive step &middot; you approve</div>
+</div>
+</body></html>

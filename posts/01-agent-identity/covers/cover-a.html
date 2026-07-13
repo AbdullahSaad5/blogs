@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1000px;height:420px;overflow:hidden}
+body{background:radial-gradient(130% 150% at 0% 0%,#16213f 0%,#0d1117 58%);
+  font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;color:#e6edf3;position:relative}
+.grid{position:absolute;inset:0;background-image:radial-gradient(#ffffff12 1px,transparent 1.4px);
+  background-size:26px 26px;-webkit-mask:linear-gradient(#000,transparent 75%)}
+.bar{position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#f85149,#d29922)}
+.wrap{position:absolute;top:46px;left:60px;right:60px}
+.eye{font:600 13px/1 "Fira Code Nerd Font Mono",ui-monospace,monospace;letter-spacing:.34em;color:#8b95a1}
+h1{font-weight:800;font-size:44px;line-height:1.06;letter-spacing:-.02em;margin-top:16px}
+.red{color:#ff6b6b}
+svg{position:absolute;left:54px;bottom:24px}
+.lab{font:600 13px/1 "Fira Code Nerd Font Mono",ui-monospace,monospace;fill:#8b95a1;letter-spacing:.04em}
+.chip{font:700 16px/1 "Fira Code Nerd Font Mono",ui-monospace,monospace;fill:#d2a8ff}
+.org{font:700 15px/1 -apple-system,system-ui,sans-serif;fill:#e6edf3}
+</style></head><body>
+<div class="grid"></div><div class="bar"></div>
+<div class="wrap">
+  <div class="eye">AGENTS · A WAR STORY</div>
+  <h1>An LLM with a memory can't<br>remember <span class="red">which account</span> it's for</h1>
+</div>
+<svg width="892" height="160" viewBox="0 0 892 160">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#3fb950"/></marker>
+    <marker id="arR" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#f85149"/></marker>
+  </defs>
+  <!-- session cards -->
+  <rect x="40" y="6" width="210" height="48" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="56" y="26" class="lab">SESSION 1</text>
+  <text x="56" y="45" class="chip">salesforce-1</text>
+  <rect x="470" y="6" width="210" height="48" rx="9" fill="#161b22" stroke="#30363d"/>
+  <text x="486" y="26" class="lab">SESSION 2</text>
+  <text x="486" y="45" class="chip">salesforce-1</text>
+  <!-- orgs -->
+  <rect x="40" y="120" width="210" height="34" rx="17" fill="#0f1a12" stroke="#2ea04366"/>
+  <text x="78" y="142" class="org">Client A · prod</text>
+  <rect x="470" y="120" width="210" height="34" rx="17" fill="#1a1212" stroke="#f8514966"/>
+  <text x="508" y="142" class="org">Client B · prod</text>
+  <!-- intended (dashed, faint): session 2 should have gone to Client B -->
+  <path d="M575,54 L575,116" stroke="#f8514955" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+  <!-- correct: session 1 -> Client A -->
+  <path d="M145,54 L145,116" stroke="#3fb950" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+  <!-- the bug: session 2 -> Client A, sagging below the label, landing on A's right edge -->
+  <path d="M575,56 C560,128 380,158 258,138" stroke="#f85149" stroke-width="3" fill="none" marker-end="url(#arR)"/>
+  <!-- label with dark backing so the wire never strikes the text -->
+  <rect x="288" y="74" width="232" height="22" rx="6" fill="#0d1117"/>
+  <text x="404" y="89" text-anchor="middle" class="lab" fill="#f85149">✗ memory pulled the stale id</text>
+</svg>
+</body></html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0c11;
+    --ink:#e8edf4;
+    --dim:#7c8696;
+    --mut:#6b7686;
+    --cyan:#41e0d0;
+    --cyan-deep:#1f9b94;
+    --ghost:#2a3340;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:2000px;height:840px}
+  body{
+    background:
+      radial-gradient(1200px 700px at 78% 42%, rgba(65,224,208,0.10), transparent 60%),
+      radial-gradient(900px 600px at 12% 88%, rgba(40,70,90,0.18), transparent 60%),
+      #0a0c11;
+    color:var(--ink);
+    font-family:"Fraunces",serif;
+    overflow:hidden;
+    position:relative;
+  }
+  /* dot grid */
+  .grid{
+    position:absolute;inset:0;
+    background-image:radial-gradient(rgba(120,140,160,0.10) 1.1px, transparent 1.2px);
+    background-size:30px 30px;
+    mask-image:linear-gradient(95deg, #000 35%, transparent 92%);
+    -webkit-mask-image:linear-gradient(95deg, #000 35%, transparent 92%);
+  }
+  .frame{position:absolute;inset:46px;border:1px solid rgba(120,150,170,0.16);border-radius:4px}
+  .wrap{position:relative;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 150px}
+
+  .left{max-width:1000px}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;font-weight:500;
+    font-size:21px;letter-spacing:0.42em;text-transform:uppercase;
+    color:var(--cyan);opacity:0.92;margin-bottom:30px;
+  }
+  .eyebrow .dot{color:#46566a;margin:0 14px}
+  h1{
+    font-weight:600;font-size:96px;line-height:0.99;letter-spacing:-0.012em;
+    color:#f2f6fb;
+  }
+  h1 .accent{
+    display:block;font-weight:500;font-style:normal;
+    color:var(--cyan);
+    -webkit-text-fill-color:transparent;
+    background:linear-gradient(92deg,#5cead9,#34b9af 70%);
+    -webkit-background-clip:text;background-clip:text;
+    margin-top:6px;
+  }
+  .meta{
+    margin-top:40px;font-family:"JetBrains Mono",monospace;font-weight:400;
+    font-size:22px;letter-spacing:0.01em;color:#93a1b3;
+  }
+  .meta b{color:#c6d0dc;font-weight:500}
+  .meta .bar{color:#3c4a5c;margin:0 13px}
+
+  .byline{
+    position:absolute;left:150px;bottom:78px;
+    font-family:"JetBrains Mono",monospace;font-size:19px;letter-spacing:0.06em;color:#5d6b7d;
+  }
+  .byline span{color:var(--cyan);opacity:0.8}
+
+  /* key art */
+  .art{position:relative;width:520px;height:560px;flex:none}
+  .art svg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+  .glow{filter:drop-shadow(0 0 26px rgba(65,224,208,0.55)) drop-shadow(0 0 60px rgba(65,224,208,0.25))}
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="frame"></div>
+
+  <div class="wrap">
+    <div class="left">
+      <div class="eyebrow">Systems<span class="dot">/</span>Agent Auth</div>
+      <h1>The agent gets one key,<span class="accent">and never the real one.</span></h1>
+      <div class="meta"><b>one key</b><span class="bar">·</span>checked every call<span class="bar">·</span>blocked if leaked</div>
+    </div>
+
+    <div class="art">
+      <!-- three ghost keys behind (the real platform keys, hidden) -->
+      <svg width="300" height="300" viewBox="0 0 100 100" style="transform:translate(-50%,-50%) rotate(-26deg) translateX(-44px)">
+        <g fill="none" stroke="#2b3543" stroke-width="3.4" opacity="0.55">
+          <circle cx="30" cy="30" r="15"/><circle cx="30" cy="30" r="5.5"/>
+          <path d="M41 41 L72 72"/><path d="M62 62 L70 54"/><path d="M70 70 L80 60"/>
+        </g>
+      </svg>
+      <svg width="300" height="300" viewBox="0 0 100 100" style="transform:translate(-50%,-50%) rotate(-8deg) translate(8px,-30px)">
+        <g fill="none" stroke="#313c4c" stroke-width="3.4" opacity="0.55">
+          <circle cx="30" cy="30" r="15"/><circle cx="30" cy="30" r="5.5"/>
+          <path d="M41 41 L72 72"/><path d="M62 62 L70 54"/><path d="M70 70 L80 60"/>
+        </g>
+      </svg>
+      <svg width="300" height="300" viewBox="0 0 100 100" style="transform:translate(-50%,-50%) rotate(12deg) translate(56px,18px)">
+        <g fill="none" stroke="#374252" stroke-width="3.4" opacity="0.5">
+          <circle cx="30" cy="30" r="15"/><circle cx="30" cy="30" r="5.5"/>
+          <path d="M41 41 L72 72"/><path d="M62 62 L70 54"/><path d="M70 70 L80 60"/>
+        </g>
+      </svg>
+
+      <!-- the one bright key -->
+      <svg class="glow" width="340" height="340" viewBox="0 0 100 100" style="transform:translate(-50%,-50%) rotate(-18deg)">
+        <g fill="none" stroke="#52e7d7" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="30" cy="30" r="15.5"/>
+          <circle cx="30" cy="30" r="5.6" stroke="#9af3e9"/>
+          <path d="M41 41 L73 73"/>
+          <path d="M62 62 L71 53"/>
+          <path d="M71 71 L82 60"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="byline">Syed Abdullah Saad <span>//</span> building agents that ship</div>
+</body>
+</html>

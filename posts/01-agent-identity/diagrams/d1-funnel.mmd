@@ -1,0 +1,10 @@
+flowchart TD
+    A["send an email"] --> B{app named?}
+    B -->|yes| C[look it up directly]
+    B -->|no| D["keyword-search app metadata"]
+    C --> E["filter to the user's CONNECTED apps"]
+    D --> E
+    E --> F{how many match?}
+    F -->|one| G[use it]
+    F -->|many| H[ask which one]
+    F -->|none| I[ask to connect first]

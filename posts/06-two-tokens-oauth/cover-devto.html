@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0c11;
+    --ink:#e8edf4;
+    --cyan:#41e0d0;
+    --gold:#d8b45f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:2000px;height:840px}
+  body{
+    background:
+      radial-gradient(1100px 680px at 76% 40%, rgba(65,224,208,0.09), transparent 60%),
+      radial-gradient(760px 520px at 70% 96%, rgba(201,162,74,0.10), transparent 62%),
+      radial-gradient(900px 600px at 10% 92%, rgba(40,70,90,0.16), transparent 60%),
+      #0a0c11;
+    color:var(--ink);
+    font-family:"Fraunces",serif;
+    overflow:hidden;position:relative;
+  }
+  .grid{
+    position:absolute;inset:0;
+    background-image:radial-gradient(rgba(120,140,160,0.09) 1.1px, transparent 1.2px);
+    background-size:32px 32px;
+    mask-image:linear-gradient(95deg, #000 30%, transparent 90%);
+    -webkit-mask-image:linear-gradient(95deg, #000 30%, transparent 90%);
+  }
+  .frame{position:absolute;inset:46px;border:1px solid rgba(120,150,170,0.16);border-radius:4px}
+  .wrap{position:relative;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 140px}
+
+  .left{max-width:940px}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;font-weight:500;
+    font-size:21px;letter-spacing:0.42em;text-transform:uppercase;
+    color:var(--cyan);opacity:0.92;margin-bottom:32px;
+  }
+  .eyebrow .dot{color:#46566a;margin:0 14px}
+  h1{font-weight:600;font-size:106px;line-height:0.97;letter-spacing:-0.014em;color:#f2f6fb}
+  h1 .accent{
+    display:block;font-weight:500;
+    -webkit-text-fill-color:transparent;
+    background:linear-gradient(92deg,#5cead9,#34b9af 70%);
+    -webkit-background-clip:text;background-clip:text;margin-top:8px;
+  }
+  .meta{
+    margin-top:44px;font-family:"JetBrains Mono",monospace;font-weight:400;
+    font-size:23px;letter-spacing:0.01em;color:#93a1b3;
+  }
+  .meta b{color:#c6d0dc;font-weight:500}
+  .meta .bar{color:#3c4a5c;margin:0 15px}
+
+  .byline{
+    position:absolute;left:140px;bottom:74px;
+    font-family:"JetBrains Mono",monospace;font-size:19px;letter-spacing:0.06em;color:#5d6b7d;
+  }
+  .byline span{color:var(--cyan);opacity:0.8}
+
+  /* ---- token cards ---- */
+  .art{position:relative;width:560px;height:640px;flex:none}
+  .card{
+    position:absolute;width:452px;border-radius:18px;padding:28px 32px 30px;
+    background:rgba(160,180,200,0.02);
+  }
+  .card .top{display:flex;justify-content:space-between;align-items:center;
+    font-family:"JetBrains Mono",monospace;margin-bottom:24px}
+  .name{font-size:23px;font-weight:600;letter-spacing:0.22em}
+  .life{font-size:15px;letter-spacing:0.05em;color:#96a0b0;
+    border:1px solid rgba(150,165,185,0.28);border-radius:22px;padding:5px 15px}
+  .body{display:flex;align-items:center;gap:11px;height:40px}
+  .seg{height:30px;border-radius:8px}
+  .sdot{font-family:"JetBrains Mono",monospace;font-size:30px;line-height:0;color:#5a6577;margin-top:-6px}
+  .foot{margin-top:26px;font-family:"JetBrains Mono",monospace;font-size:16.5px;
+    letter-spacing:0.02em;color:#8b96a7}
+
+  .access{top:8px;right:0;
+    border:1.6px solid rgba(82,231,215,0.6);
+    box-shadow:0 0 46px rgba(65,224,208,0.15), inset 0 0 34px rgba(65,224,208,0.045);}
+  .access .name{color:#74ede0}
+  .access .seg.a{width:66px;background:linear-gradient(180deg,#4fe0d1,#2ba79a)}
+  .access .seg.b{width:150px;background:linear-gradient(180deg,#5eeaDB,#33b6a9)}
+  .access .seg.c{width:88px;background:linear-gradient(180deg,#4fe0d1,#2ba79a)}
+
+  .refresh{top:352px;right:34px;
+    border:1.6px solid rgba(216,180,95,0.55);
+    box-shadow:0 0 46px rgba(201,162,74,0.13), inset 0 0 34px rgba(201,162,74,0.045);}
+  .refresh .name{color:#e3c47b}
+  .refresh .life{border-color:rgba(216,180,95,0.35);color:#c3ab77}
+  .opaque{flex:1;height:30px;border-radius:8px;opacity:0.82;
+    background:repeating-linear-gradient(90deg,#8a723e 0,#8a723e 9px,#6f5c32 9px,#6f5c32 18px)}
+  .lockbox{width:34px;height:30px;border-radius:7px;border:1.6px solid #b8974e;
+    display:flex;align-items:center;justify-content:center}
+
+  /* refreshes arrow linking refresh -> access */
+  .link{position:absolute;left:2px;top:150px}
+  .linklabel{position:absolute;left:-2px;top:300px;transform:rotate(-90deg);transform-origin:left top;
+    font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:0.28em;
+    text-transform:uppercase;color:#7d8798}
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="frame"></div>
+
+  <div class="wrap">
+    <div class="left">
+      <div class="eyebrow">Auth<span class="dot">/</span>Tokens</div>
+      <h1>Two tokens.<span class="accent">One job each.</span></h1>
+      <div class="meta"><b>access</b> fast, stateless<span class="bar">·</span><b>refresh</b> rare, revocable</div>
+    </div>
+
+    <div class="art">
+      <!-- linking arrow: refresh mints access -->
+      <svg class="link" width="150" height="240" viewBox="0 0 150 240" fill="none">
+        <path d="M120 214 C 40 200, 40 60, 116 34" stroke="#7a6b3f" stroke-width="2.4"
+              stroke-dasharray="2 9" stroke-linecap="round"/>
+        <path d="M116 34 l-15 3 l9 12 z" fill="#a98f4c"/>
+      </svg>
+      <div class="linklabel">mints new</div>
+
+      <!-- ACCESS: short, bright, segmented JWT (header.payload.signature) -->
+      <div class="card access">
+        <div class="top"><span class="name">ACCESS</span><span class="life">expires ~15 min</span></div>
+        <div class="body">
+          <span class="seg a"></span><span class="sdot">.</span>
+          <span class="seg b"></span><span class="sdot">.</span>
+          <span class="seg c"></span>
+        </div>
+        <div class="foot">a stateless JWT, sent on every request</div>
+      </div>
+
+      <!-- REFRESH: longer, gold, opaque + lock (a row in the DB) -->
+      <div class="card refresh">
+        <div class="top"><span class="name">REFRESH</span><span class="life">long-lived</span></div>
+        <div class="body">
+          <span class="lockbox">
+            <svg width="15" height="17" viewBox="0 0 15 17" fill="none">
+              <rect x="1.5" y="7" width="12" height="9" rx="2" stroke="#d8b45f" stroke-width="1.6"/>
+              <path d="M4 7 V4.6 A3.5 3.5 0 0 1 11 4.6 V7" stroke="#d8b45f" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <span class="opaque"></span>
+        </div>
+        <div class="foot">an opaque row in the DB, so you can delete it</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="byline">Syed Abdullah Saad</div>
+</body>
+</html>

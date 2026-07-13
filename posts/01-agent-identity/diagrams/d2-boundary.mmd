@@ -1,0 +1,6 @@
+flowchart TD
+    A["AGENT · restricted user<br/>memory holds: salesforce-1"]
+    B["WORKER · privileged user<br/>reads the mapper file"]
+    C["runs on the account<br/>the user actually meant"]
+    A -. "alias + session id<br/>· · · OS permission boundary · · ·" .-> B
+    B -->|"resolves alias → real id<br/>(this session only)"| C

@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1000px;height:420px;overflow:hidden}
+body{background:radial-gradient(120% 130% at 100% 0%,#1a1530 0%,#0d1117 60%);
+  font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;color:#e6edf3;position:relative}
+.bar{position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#bc8cff,#f85149)}
+.head{position:absolute;top:44px;left:60px;right:60px}
+.eye{font:600 13px/1 "Fira Code Nerd Font Mono",ui-monospace,monospace;letter-spacing:.34em;color:#8b95a1}
+h1{font-weight:800;font-size:40px;line-height:1.08;letter-spacing:-.02em;margin-top:14px}
+h1 .g{color:#bc8cff}
+.stage{position:absolute;left:60px;right:60px;bottom:48px;display:flex;align-items:center;gap:0}
+.col{flex:1}
+.cap{font:600 12px/1 "Fira Code Nerd Font Mono",ui-monospace,monospace;letter-spacing:.18em;color:#7d8590;margin-bottom:12px}
+.chip{display:inline-block;font:700 17px/1 "Fira Code Nerd Font Mono",ui-monospace,monospace;color:#d2a8ff;
+  background:#161b22;border:1px solid #30363d;border-radius:8px;padding:9px 13px;margin:4px 6px 4px 0}
+.masked{color:#5b636e}
+.boundary{width:1px;align-self:stretch;margin:0 26px;background:repeating-linear-gradient(#f8514988 0 6px,transparent 6px 12px);position:relative}
+.lock{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#0d1117;color:#f85149;
+  font:700 12px/1 "Fira Code Nerd Font Mono",monospace;padding:6px 4px;writing-mode:vertical-rl;letter-spacing:.1em}
+.arrow{color:#6e7681;font-size:22px;margin:0 8px;align-self:center}
+</style></head><body>
+<div class="bar"></div>
+<div class="head">
+  <div class="eye">SESSION-SCOPED IDENTITY</div>
+  <h1>The agent only ever sees an <span class="g">alias</span>.<br>The real id lives behind a boundary it can't cross.</h1>
+</div>
+<div class="stage">
+  <div class="col">
+    <div class="cap">WHAT THE MODEL SEES</div>
+    <span class="chip">gmail-1</span><span class="chip">salesforce-2</span>
+  </div>
+  <div class="boundary"><span class="lock">OS BOUNDARY</span></div>
+  <div class="col" style="text-align:right">
+    <div class="cap">RESOLVED PER SESSION</div>
+    <span class="chip masked">conn_a1f••••••</span><span class="chip masked">conn_7c2••••••</span>
+  </div>
+</div>
+</body></html>

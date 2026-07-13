@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:2000px; height:840px; }
+  body {
+    background:#0c0c0d;
+    font-family:"Fraunces", Georgia, serif;
+    color:#edeae3;
+    position:relative; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:0 150px;
+  }
+  /* faint generated-grid texture: the flood of sameness */
+  .grid {
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(237,234,227,0.035) 0 1px, transparent 1px 66px),
+      repeating-linear-gradient(90deg, rgba(237,234,227,0.035) 0 1px, transparent 1px 66px);
+    mask-image: radial-gradient(120% 120% at 80% 20%, #000 35%, transparent 78%);
+    -webkit-mask-image: radial-gradient(120% 120% at 80% 20%, #000 35%, transparent 78%);
+  }
+  .glow { position:absolute; top:-220px; right:-180px; width:760px; height:760px;
+    background:radial-gradient(circle, rgba(216,162,74,0.16), transparent 62%); }
+  .content { position:relative; z-index:2; }
+  .kicker {
+    font-family:"Inter", sans-serif; font-size:27px; letter-spacing:7px;
+    text-transform:uppercase; color:#d8a24a; font-weight:600; margin-bottom:40px;
+  }
+  .line1 { font-style:italic; font-weight:300; font-size:58px; color:#8e8b83; margin-bottom:18px; }
+  .line2 { font-weight:600; font-size:122px; line-height:1.04; letter-spacing:-1px; }
+  .hollow {
+    color:transparent;
+    -webkit-text-stroke:2.5px #d8a24a;
+    font-style:italic;
+  }
+  .sign { position:relative; z-index:2; margin-top:74px; display:flex; align-items:center; gap:26px; }
+  .sign .rule { width:120px; height:2px; background:#d8a24a; }
+  .sign .name { font-style:italic; font-size:38px; color:#b9b5ac; font-weight:300; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="content">
+    <div class="kicker">On AI &amp; the craft</div>
+    <div class="line1">I'm shipping the best work of my career.</div>
+    <div class="line2">None of it feels like <span class="hollow">mine.</span></div>
+  </div>
+  <div class="sign">
+    <span class="rule"></span><span class="name">Abdullah Saad</span>
+  </div>
+</body>
+</html>

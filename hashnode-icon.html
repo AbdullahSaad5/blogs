@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600..700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:400px;height:400px}
+body{background:#0c0c0d;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;font-family:"Fraunces",Georgia,serif}
+.glow{position:absolute;width:380px;height:380px;background:radial-gradient(circle,rgba(216,162,74,0.18),transparent 60%)}
+.ring{position:absolute;inset:26px;border:2px solid rgba(216,162,74,0.35);border-radius:26px}
+.mono{position:relative;z-index:2;font-size:180px;font-weight:700;color:#edeae3;letter-spacing:-6px;line-height:1}
+.mono .s{color:#d8a24a}
+.dot{position:absolute;bottom:70px;width:46px;height:4px;background:#d8a24a;z-index:2}
+</style></head>
+<body>
+  <div class="glow"></div>
+  <div class="ring"></div>
+  <div class="mono">A<span class="s">S</span></div>
+  <div class="dot"></div>
+</body></html>
