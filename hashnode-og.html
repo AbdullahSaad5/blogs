@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--cyan:#41e0d0;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  body{
+    background:
+      radial-gradient(820px 520px at 80% 40%, rgba(65,224,208,0.10), transparent 60%),
+      radial-gradient(640px 440px at 8% 92%, rgba(40,70,90,0.18), transparent 60%),
+      #0a0c11;
+    color:#e8edf4;font-family:"Fraunces",serif;overflow:hidden;position:relative;
+  }
+  .grid{position:absolute;inset:0;
+    background-image:radial-gradient(rgba(120,140,160,0.10) 1.1px, transparent 1.2px);
+    background-size:26px 26px;
+    mask-image:linear-gradient(95deg,#000 32%,transparent 92%);
+    -webkit-mask-image:linear-gradient(95deg,#000 32%,transparent 92%);}
+  .frame{position:absolute;inset:34px;border:1px solid rgba(120,150,170,0.16);border-radius:4px}
+  .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 96px}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:17px;
+    letter-spacing:0.4em;text-transform:uppercase;color:var(--cyan);opacity:0.92;margin-bottom:26px}
+  .eyebrow .dot{color:#46566a;margin:0 12px}
+  h1{font-weight:600;font-size:82px;line-height:1.0;letter-spacing:-0.014em;color:#f2f6fb}
+  h1 .accent{display:block;font-weight:500;margin-top:6px;
+    -webkit-text-fill-color:transparent;
+    background:linear-gradient(92deg,#5cead9,#34b9af 70%);
+    -webkit-background-clip:text;background-clip:text;}
+  .meta{margin-top:34px;font-family:"JetBrains Mono",monospace;font-size:19px;
+    letter-spacing:0.01em;color:#93a1b3}
+  .meta .bar{color:#3c4a5c;margin:0 12px}
+  .foot{position:absolute;left:96px;bottom:52px;font-family:"JetBrains Mono",monospace;
+    font-size:17px;letter-spacing:0.06em;color:#5d6b7d}
+  .foot span{color:var(--cyan);opacity:0.85}
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="frame"></div>
+  <div class="wrap">
+    <div class="eyebrow">Abdullah Saad<span class="dot">/</span>Field Notes</div>
+    <h1>AI agents in production,<span class="accent">and what breaks.</span></h1>
+    <div class="meta">plan before acting<span class="bar">·</span>right account<span class="bar">·</span>fail safely<span class="bar">·</span>full-stack</div>
+  </div>
+  <div class="foot">dev.to/abdullahsaad5 <span>//</span> abdullahsaad5.github.io</div>
+</body>
+</html>
