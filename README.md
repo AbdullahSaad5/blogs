@@ -32,9 +32,14 @@ blog/
 
 ## Posts
 
-| # | Slug | Status |
-|---|------|--------|
-| 01 | agent-identity | ✅ Done — "Why my AI agent kept writing to the wrong client's Salesforce" (ready to publish) |
-| 02 | plan-mode | Planned (sequel teased in 01) |
+| # | Slug | Title | Status |
+|---|------|-------|--------|
+| 01 | agent-identity | Why my AI agent kept writing to the wrong client's Salesforce | ✅ Published |
+| 02 | plan-mode | The hard part of my AI agent wasn't doing the work, it was planning it | ✅ Published |
+| 03 | doc-authoring | I built an abstraction so my agent could write documents. Then I deleted it. | ✅ Published |
+| 04 | programming-joy | I'm shipping the best work of my career. None of it feels like mine. | ✅ Published |
+| 05 | agent-key-exchange | My agent kept reading data it wasn't allowed to. The prompt was never going to stop it. | ✅ Published |
+| 06 | two-tokens-oauth | Access vs Refresh Tokens: I Was Missing Two Ideas | ✅ Published (dev.to live 2026-07-13) |
 
-See `PLAN.md` for the full backlog and the reasoning behind every decision.
+All live on [dev.to](https://dev.to/abdullahsaad5). See `PLAN.md` for the full backlog and the
+reasoning behind every decision.
