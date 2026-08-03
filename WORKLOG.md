@@ -84,6 +84,16 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9h — post 07 CONCISION PASS, Saad: "make it concise")
+
+- Full tighten: every section compressed to point → story → one-line lesson; doubled paragraphs merged; opening story trimmed from 4 paragraphs to 3; close question-list reduced to the two load-bearing questions; repeated lesson sentences cut (e.g. habit 3's "if the answer is memory..." tail, habit 11's restated thesis). All 11 habits and ALL verified facts kept (incl. 99%/1,200-command stat + miss asymmetry, intent-first + cron/admin-review mechanism, "That shipped", out-of-stock wording).
+- **Numbers:** 2,471 → 2,233 words (10%); max paragraph 519 → 344 chars; 0 em-dashes; no AI tells; 11 habit leads intact.
+- devto.md rebuilt (byte-identical), PUT to dev.to draft 4304603, verified (published:false).
+- **Honest flag:** eleven habits each needing point + story + lesson lands naturally around ~2.2k words. If Saad wants it closer to the 1.3-1.6k house norm, the lever is merging a section (habit 8 "list the cases nobody raised" folds cleanly into habit 1's "ask the question") or dropping the least-favorite story — not further sentence-trimming.
+- **Still required before live:** voice pass, cover drag-drop (cover.png), flip published:true, cross-posts, profile/portfolio cards.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
