@@ -65,6 +65,7 @@ Append a dated block whenever we do blog work.
 ## 2026-08-03 (session 9f — post 07 fact correction: "out of stock", not "disappear")
 
 - Saad corrected the opening-story assumption: the team's wrong assumption was that a depleted listing would SHOW OUT OF STOCK (listing tied to the stock lifecycle), not that the listing would disappear. Line fixed in draft.md + devto.md, PUT to dev.to draft 4304603, verified via API (corrected line present, old wording gone, published:false). Factual-pass comment block updated.
+- **FACT CORRECTION 2 (same session):** browser service reductions (smaller custom UI, lighter communication, on-demand start, idle teardown) SHIPPED — not "built and tested locally" as Saad said earlier in the factual pass. Draft now reads "That shipped...", factual-pass comment block updated. devto.md rebuilt, PUT + verified via API (published:false).
 - **Still required before live:** Saad's out-loud voice pass, cover drag-drop (cover.png), flip published:true, cross-posts, profile/portfolio cards.
 
 ---

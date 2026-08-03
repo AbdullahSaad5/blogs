@@ -72,7 +72,7 @@ Then I multiplied the design by the user count. The implementation added two ser
 
 The UI only needed to show the page the agent was on and let the user take over. Streaming the whole browser carried developer tools, settings, and everything else the user would never touch.
 
-So we built a smaller custom UI, lighter communication with the front end, and the browser service starting on demand and shutting down after an idle period. We built and tested that locally, and it kept the smooth takeover experience while giving the system a much better path to scale.
+So we built a smaller custom UI, lighter communication with the front end, and the browser service starting on demand and shutting down after an idle period. That shipped, and it kept the smooth takeover experience while giving the system a much better path to scale.
 
 "The feature works" only proves the single-user path. The senior move is to change the multiplier and ask what grows once per user. If the answer is memory, or a service, or a process, that growth belongs in the design before the feature is called finished.
 

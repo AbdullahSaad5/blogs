@@ -3,7 +3,7 @@ TITLE LOCKED 2026-08-03: "How to Think Like a Senior Developer" (chosen from 5 o
 
 FACTUAL PASS COMPLETE 2026-08-03 (all 5 confirmed by Saad; draft updated accordingly):
 1. Browser memory figure: confirmed as written.
-2. Browser optimizations: BUILT AND TESTED LOCALLY (not shipped) - draft now says exactly that.
+2. Browser optimizations: SHIPPED (Saad corrected 2026-08-03; earlier "built and tested locally" was wrong) - draft says "That shipped".
 3. Stripe fix order: payment intent first, ID saved to DB, then charge; webhook matches later. Draft rewritten.
 4. Stripe retries: handler returns 200 (no Stripe retry), webhook saved as pending, cron matches 3-4 more times, stays pending for admin review, logged. Draft rewritten.
 5. Two per-user services: confirmed.
@@ -80,7 +80,7 @@ Then I multiplied the design by the user count. The implementation added two ser
 
 The UI only needed to show the page the agent was on and let the user take over. Streaming the whole browser carried developer tools, settings, and everything else the user would never touch.
 
-So we built a smaller custom UI, lighter communication with the front end, and the browser service starting on demand and shutting down after an idle period. We built and tested that locally, and it kept the smooth takeover experience while giving the system a much better path to scale.
+So we built a smaller custom UI, lighter communication with the front end, and the browser service starting on demand and shutting down after an idle period. That shipped, and it kept the smooth takeover experience while giving the system a much better path to scale.
 
 "The feature works" only proves the single-user path. The senior move is to change the multiplier and ask what grows once per user. If the answer is memory, or a service, or a process, that growth belongs in the design before the feature is called finished.
 
