@@ -66,7 +66,21 @@ Append a dated block whenever we do blog work.
 
 - Saad corrected the opening-story assumption: the team's wrong assumption was that a depleted listing would SHOW OUT OF STOCK (listing tied to the stock lifecycle), not that the listing would disappear. Line fixed in draft.md + devto.md, PUT to dev.to draft 4304603, verified via API (corrected line present, old wording gone, published:false). Factual-pass comment block updated.
 - **FACT CORRECTION 2 (same session):** browser service reductions (smaller custom UI, lighter communication, on-demand start, idle teardown) SHIPPED — not "built and tested locally" as Saad said earlier in the factual pass. Draft now reads "That shipped...", factual-pass comment block updated. devto.md rebuilt, PUT + verified via API (published:false).
-- **Still required before live:** Saad's out-loud voice pass, cover drag-drop (cover.png), flip published:true, cross-posts, profile/portfolio cards.
+
+---
+
+## 2026-08-03 (session 9g — post 07 SIX-HABIT EXPANSION, Saad: "list them down we need to add those as well")
+
+- Saad asked for the other things a senior dev does, beyond the existing five. I listed six candidates, each with its real-story source (published posts 01-05 + the Shajrah audit) so no invented habits. Saad chose ALL SIX ("go long"). NOTE: my clarify option said "ten habits total" — actual is ELEVEN (5+6); miscount on my side, recorded in the draft comment block.
+- **Habits 6-11 added (point-first format, house voice):**
+  6. Plan before you execute — destructive-step classification (two layers: intent + raw command), must/should/could criticality, planner/executor split. Story: post 02. Stat cited with methodology: "roughly 99% of destructive commands across the 1,200-command action space" + the miss asymmetry.
+  7. Know who you're acting for — tenant in the runtime, not the prompt; "stops when it's unsure". Story: post 01 (wrong-client Salesforce).
+  8. List the cases nobody raised — proration + grandfathering. Story: post 04.
+  9. Audit it the way an outsider sees it — anonymous-caller audit; pending queue readable via query param; blocking did nothing for 15 min; "features were decorative". Story: Shajrah KNOWN_ISSUES (personal project, employer-safe).
+  10. Verify the real output, not the signal — "(cont.)" slide, "a file existing isn't a document". Story: post 03.
+  11. Make failure cost as little as possible — disposable stand-in key, middleware swap, "enforcement lives below the model". Story: post 05.
+- Lede updated to "eleven parts"; recap rewritten as an 11-bullet list. Long paragraphs split (max now 347 chars). 0 em-dashes, no AI tells, 2,471 body words. devto.md rebuilt (byte-identical), PUT to dev.to draft 4304603, verified (eleventh habit present, published:false).
+- **Still required before live:** Saad's out-loud voice pass on the full eleven-habit version (it's long now — trim candidates if it feels heavy), cover drag-drop (cover.png), flip published:true, cross-posts, profile/portfolio cards.
 
 ---
 

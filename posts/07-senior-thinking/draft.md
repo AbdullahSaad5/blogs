@@ -11,11 +11,12 @@ FACTUAL PASS COMPLETE 2026-08-03 (all 5 confirmed by Saad; draft updated accordi
 VOICE REWRITE 2026-08-03: full pass into house register (contractions, first-person scenes, so-chained flow) per Saad's "looks and sounds different" flag. Facts unchanged.
 POINT-FIRST RESTRUCTURE 2026-08-03: per Saad "give points and tell stories along the way" - each section now leads with the habit (what a senior does), the story shows the consequence (what happens if you don't), the lesson lands at the end. Facts unchanged.
 FACT CORRECTION 2026-08-03: the wrong assumption was "listing shows out of stock", NOT "listing disappears" (Saad). Line fixed.
+SIX-HABIT EXPANSION 2026-08-03: added habits 6-11 (plan/classify destructive steps, know who you're acting for, enumerate unseen cases, audit as an outsider, verify the real output, blast-radius design) per Saad "list them down we need to add those as well". Stories grounded in published posts 01-05 + the Shajrah audit. Lede + recap updated to eleven parts. NOTE: clarify option said "ten" - actual count is eleven (miscount on my side).
 -->
 
 # How to Think Like a Senior Developer
 
-Thinking like a senior developer is a habit, and I've learned it the hard way. Here's the habit in five parts, and the story behind each one.
+Thinking like a senior developer is a habit, and I've learned it the hard way. Here's the habit in eleven parts, and the story behind each one.
 
 We were building an e-commerce portal where a seller enters a product once and publishes it to their own website, eBay, Amazon, or all three.
 
@@ -116,11 +117,87 @@ A useful estimate carries its risks. What we still need to verify, which depende
 
 This is another reason documentation matters. It keeps the estimate tied to what we knew when we made it.
 
+## Plan before you execute
+
+The sixth habit: plan before you execute, and know which steps can't be undone.
+
+I built an agent that was supposed to do real work, and the planning turned out to be the hard part. The first version planned and executed in the same pass, and it was too eager. It planned blind, then it jumped.
+
+So we split it: a separate planner that investigated and proposed steps, and an executor that ran the approved ones. Every step carried a criticality, must, should, or could.
+
+Destructive steps got classified before they could run, two layers deep, one reading the intent and one reading the raw command. The classifier caught roughly 99% of destructive commands across the 1,200-command action space, and the misses were the ones that mattered, because a destructive command waved through is the expensive kind of miss.
+
+The planning was harder than the doing. That's the point. A senior plan knows which steps are reversible and which aren't, and treats the irreversible ones like they cost something.
+
+## Know who you're acting for
+
+The seventh habit: know who you're acting for.
+
+My agent once wrote to the wrong client's Salesforce. It was doing real work in a real account, and nothing pinned down which client it was acting for. The context lived in the conversation, and the conversation was wrong.
+
+We fixed it by making the tenant part of the runtime, not the prompt: the agent carries which client it's acting for, and it stops when it's unsure.
+
+Before any change, ask who this is for. Which client, which tenant, which account. The prompt can't be trusted to remember. The platform has to know.
+
+## List the cases nobody raised
+
+The eighth habit: list the cases nobody raised.
+
+I built a billing system with AI doing most of the work. It was fast, and it handled everything we told it about. It never handled what we didn't: buying a second package in the middle of a billing cycle, or what happens to existing subscribers when an admin changes a plan.
+
+Charge the difference now or next cycle? Migrate everyone or grandfather them? Those questions never came up, because nothing in the request mentioned them. The model didn't see the case at all. Someone had to enumerate it.
+
+Existing users, mid-cycle changes, migrations. The code handles what you tell it. The list of what you didn't tell it is yours to make.
+
+## Audit it the way an outsider sees it
+
+The ninth habit: audit your system the way an outsider sees it.
+
+I found a moderation flaw in my own family-tree project by using the API the way a stranger would, instead of reading the code. From the inside, the workflow looked right: submissions went to pending, moderators approved them.
+
+Then I tried it as an anonymous caller. One query parameter later I was reading the pending queue directly. Blocking an account did nothing for fifteen minutes, because the middleware never checked the account status.
+
+The features were decorative. They looked right to the people who built them, and did nothing for the people they were supposed to protect.
+
+The senior habit is stepping outside your own view of the system. If you only look at it the way you built it, you'll never see what it looks like to someone it was built against.
+
+## Verify the real output, not the signal
+
+The tenth habit: verify the real output, not the signal that it ran.
+
+I built a wrapper so my agent could write documents without a five-thousand-token script. By every signal it worked. The agent produced files, fast. Then I looked at what it actually made.
+
+Every document had the same shape. Generic structure, generic wording, the same deck no matter what it was for. One slide overflowed its table and just said "(cont.)".
+
+The agent declared victory the moment the file existed. The file was the exit ramp: the work looked done because a thing existed, not because the thing was right.
+
+A passing build isn't a working feature. The artifact is what counts, so look at what came out before you call it done.
+
+## Make failure cost as little as possible
+
+The eleventh habit: design so a failure costs as little as possible.
+
+The agent system had to reach three third-party services, and each one had its own key shape and scope. The prototype put the real keys where the agent could reach them. It worked, and then it showed me exactly why it was wrong: the only thing stopping the agent from using a key wrongly was a sentence in a prompt.
+
+So the design changed. The agent never holds a real credential. It holds our own stand-in key, and the middleware swaps it for the real one underneath on every call. Killing the stand-in kills that agent's access on the next call, while the real keys keep working.
+
+Enforcement lives below the model, where it can't be argued with. You build so that when the system is wrong, it costs as little as possible.
+
 ## The problem is bigger than the ticket
 
 So what does a senior do differently?
 
-They ask the question before the code answers it. When the scope multiplies, they revisit the unit of work. They multiply the design by the user count. They trace the whole workflow. They put the risks inside the plan.
+- They ask the question before the code answers it.
+- When the scope multiplies, they revisit the unit of work.
+- They multiply the design by the user count.
+- They trace the whole workflow.
+- They put the risks inside the plan.
+- They plan before executing, and classify the steps that can't be undone.
+- They know who they're acting for.
+- They list the cases nobody raised.
+- They audit the system the way an outsider sees it.
+- They verify the real output, not the signal.
+- They design so a failure costs as little as possible.
 
 The more systems I work on, the more I ask before changing one. Is the reported problem the cause, or the last symptom in a longer workflow? Which callers depend on this code? What state do they expect? What happens when seven becomes 43, or one user becomes thousands?
 
