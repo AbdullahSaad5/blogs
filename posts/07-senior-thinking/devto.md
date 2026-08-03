@@ -94,25 +94,23 @@ This is another reason documentation matters. It keeps the estimate tied to what
 
 ## Plan before you execute
 
-The sixth habit: plan before you execute, and know which steps can't be undone.
+The sixth habit: plan before you execute. Most of the time belongs in the planning.
 
-I built an agent that was supposed to do real work, and the planning turned out to be the hard part. The first version planned and executed in the same pass, and it was too eager. It planned blind, then it jumped.
+That's where you expand the domain of everything. Go down every branch and decide what should happen on each one. Walk the alternative flows for everything that can go right, then look at what can go wrong and how you'd come back from it.
 
-So we split it: a separate planner that investigated and proposed steps, and an executor that ran the approved ones. Every step carried a criticality, must, should, or could.
+The rebuild I described at the top is the same lesson from the other side. The questions we didn't ask, the plan we didn't make, the alternative flows we never walked. The plan was the product, and we rushed past it to the code.
 
-Destructive steps got classified before they could run, two layers deep, one reading the intent and one reading the raw command. The classifier caught roughly 99% of destructive commands across the 1,200-command action space, and the misses were the ones that mattered. A destructive command waved through is the expensive kind of miss.
-
-The planning was harder than the doing. That's the point. A senior plan treats the irreversible steps like they cost something.
+If I had an hour to solve a problem, I'd spend 55 minutes thinking about the problem and 5 minutes thinking about solutions. A senior plan also knows which steps can't be undone, and treats the irreversible ones like they cost something.
 
 ## Know who you're acting for
 
-The seventh habit: know who you're acting for.
+The seventh habit: know who you're acting for. Get into the head of the person who's going to use what you build.
 
-My agent once wrote to the wrong client's Salesforce. The real connection id was sitting in its memory, and it had every reason to think it was relevant. Telling the model to be careful wouldn't fix it, because a confidently wrong model doesn't ask.
+How will they look at the system? How will they understand it? How do your words affect them, every label, every error message, every confirmation? How does the workflow run for them, not for you? And what's the easiest way to make it dumb-proof, so a user can't accidentally do much damage?
 
-So we took the ids away entirely. The agent never sees a real connection id. It gets an alias, a name that only means something inside the session, and a mapper that the agent's OS user can't read turns the alias into the real id on the way out. The wrong choice became structurally impossible instead of just discouraged.
+We built the e-commerce form the way we would use it. The client operated differently: the catalog existed once, shipments added stock against it, and a depleted batch didn't kill a listing. We never got into their head, and the demo is where we found out.
 
-It's not perfect. A confidently wrong model can still reach for the wrong alias, which is exactly why the steps stay visible in plan mode before they run. But the principle holds: before any change, ask who this is for. Which client, which tenant, which account. Don't hand identity to something that can be talked into anything.
+The user is the actor the system works for. If you don't know how they think, you're building for yourself.
 
 ## List the cases nobody raised
 
@@ -122,7 +120,7 @@ I built a billing system with AI doing most of the work. It was fast, and it han
 
 Charge the difference now or next cycle? Migrate everyone or grandfather them? Those questions never came up, because nothing in the request mentioned them. The model didn't see the case at all. Someone had to enumerate it.
 
-Existing users, mid-cycle changes, migrations. The code handles what you tell it. The list of what you didn't tell it is yours to make.
+Existing users, mid-cycle changes, migrations. The code handles what you tell it. The list of what you didn't tell it is yours to make. A client demo is where those gaps surface first.
 
 ## Audit it the way an outsider sees it
 

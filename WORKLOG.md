@@ -129,6 +129,18 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9l — post 07 HABIT REWRITES per Saad: "we are trying too hard to fit our previous blogs, that is wrong")
+
+- Saad flagged that habits 6-11 read as previous-blog content shoehorned in. Decided (via clarify): keep all six, rewrite the forced ones to stand on their own. Saad directed each:
+- **Habit 6 (Plan before you execute) — REWRITTEN:** now planning-first: most of the time belongs in the planning; expand the domain of everything; go down every branch; walk alternative flows for what can go right; look at what can go wrong and how you come back. Story beat = callback to the opening miss (questions we didn't ask, plan we didn't make, alternative flows we never walked; "the plan was the product"). Einstein quote — used the widely-attributed 55-minutes version (Saad's phrasing wasn't a documented Einstein line; flagged to him, he can revert if he wants). Agent planner story + 99%/1,200-command stat REMOVED (also removes the most pushable number).
+- **Habit 7 (Know who you're acting for) — REWRITTEN:** now user-empathy framing: get into the head of the person who'll use what you build; how they look at it, understand it, how your words affect them, how the workflow runs for them, dumb-proofing so a user can't do much damage. Story beat = e-commerce client callback (we built the form the way we would use it). Salesforce-alias story REMOVED.
+- **Habit 8 — light touch:** kept billing proration (Saad confirmed it), added the client-reviewer beat: "A client demo is where those gaps surface first."
+- **Habit 9 (Shajrah): untouched** (the one fresh non-blog story). **Habit 10 (docgen wrapper): untouched** (Saad confirmed). **Habit 11 (stand-in key): untouched** ("works for that already").
+- **Mechanicals:** 0 em-dashes; the one regex "antithesis" flag is a false positive (user-requested missed-things list, not a negation-correction aphorism); max paragraph 343; 11 leads intact; 2,266 words. devto.md rebuilt, PUT to draft 4304603, verified (55-minutes quote live, planner story gone, published:false).
+- **Overlap flag (kept per Saad's direction):** habits 1, 5, 6, 7 now all reference the e-commerce miss from different angles (ask / rebuild / plan / user-head) — distinct lessons, but a careful reader will notice the recurring story.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
