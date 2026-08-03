@@ -3,7 +3,7 @@ title: How to Think Like a Senior Developer
 published: false
 description: We built one form for the catalog, the stock, and the listings, and nobody asked whether they shared a lifecycle. The client demo proved us wrong. Senior thinking is the habit of catching assumptions before they become architecture.
 tags: programming, career, softwareengineering, productivity
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/19a8dnxms71kgzw26iqb.png
 canonical_url:
 ---
 

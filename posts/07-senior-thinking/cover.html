@@ -60,10 +60,10 @@
   }
   .byline span{color:var(--gold);opacity:0.8}
 
-  /* ---- art: blueprint house, gold dashed foundation = the assumption ---- */
+  /* ---- art: the eleven-habit spec sheet (technical plate) ---- */
   .art{position:relative;width:560px;height:640px;flex:none}
   .art::before{
-    content:"";position:absolute;left:80px;top:150px;width:400px;height:340px;border-radius:50%;
+    content:"";position:absolute;left:60px;top:110px;width:440px;height:380px;border-radius:50%;
     background:radial-gradient(closest-side, rgba(216,180,95,0.09), transparent 70%);
     filter:blur(18px);
   }
@@ -76,47 +76,43 @@
   <div class="wrap">
     <div class="left">
       <div class="eyebrow">Thinking<span class="dot">/</span>Beyond</div>
-      <h1>Assumptions<span class="accent">become architecture.</span></h1>
-      <div class="meta"><b>one form, three lifecycles</b><span class="bar">·</span><b>seven categories became 43</b></div>
+      <h1>How to think like<span class="accent">a senior developer.</span></h1>
+      <div class="meta"><b>eleven habits</b><span class="bar">·</span><b>learned the hard way</b></div>
     </div>
 
     <div class="art">
       <svg width="560" height="460" viewBox="0 0 560 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- ground -->
-        <line x1="70" y1="392" x2="490" y2="392" stroke="#3d4f6e" stroke-width="1.5"/>
-        <!-- foundation slab: dashed gold = the assumption -->
-        <rect x="90" y="356" width="380" height="26" rx="2" fill="rgba(216,180,95,0.07)" stroke="#e0bd6d" stroke-width="2" stroke-dasharray="7 6"/>
-        <!-- walls -->
-        <rect x="102" y="210" width="356" height="146" fill="rgba(85,104,138,0.06)" stroke="#55688a" stroke-width="1.8"/>
-        <!-- roof -->
-        <polygon points="102,210 280,118 458,210" fill="rgba(85,104,138,0.10)" stroke="#55688a" stroke-width="1.8" stroke-linejoin="round"/>
-        <line x1="280" y1="118" x2="280" y2="210" stroke="#3d4f6e" stroke-width="1.2" stroke-dasharray="3 5"/>
-        <!-- door -->
-        <rect x="258" y="292" width="44" height="64" fill="none" stroke="#55688a" stroke-width="1.6"/>
-        <circle cx="294" cy="324" r="1.8" fill="#8ba0c4"/>
-        <!-- windows -->
-        <rect x="150" y="252" width="38" height="38" fill="none" stroke="#55688a" stroke-width="1.6"/>
-        <line x1="150" y1="271" x2="188" y2="271" stroke="#3d4f6e" stroke-width="1.2"/>
-        <line x1="169" y1="252" x2="169" y2="290" stroke="#3d4f6e" stroke-width="1.2"/>
-        <rect x="372" y="252" width="38" height="38" fill="none" stroke="#55688a" stroke-width="1.6"/>
-        <line x1="372" y1="271" x2="410" y2="271" stroke="#3d4f6e" stroke-width="1.2"/>
-        <line x1="391" y1="252" x2="391" y2="290" stroke="#3d4f6e" stroke-width="1.2"/>
-        <!-- left dimension -->
-        <line x1="72" y1="210" x2="72" y2="356" stroke="#55688a" stroke-width="1.4"/>
-        <line x1="66" y1="210" x2="78" y2="210" stroke="#55688a" stroke-width="1.4"/>
-        <line x1="66" y1="356" x2="78" y2="356" stroke="#55688a" stroke-width="1.4"/>
-        <!-- right dimension -->
-        <line x1="488" y1="210" x2="488" y2="356" stroke="#55688a" stroke-width="1.4"/>
-        <line x1="482" y1="210" x2="494" y2="210" stroke="#55688a" stroke-width="1.4"/>
-        <line x1="482" y1="356" x2="494" y2="356" stroke="#55688a" stroke-width="1.4"/>
-        <!-- dimension labels (blueprint annotations) -->
-        <text x="40" y="285" transform="rotate(-90 40 285)" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="2.5" fill="#7d8ba3">3 LIFECYCLES<tspan fill="#d8b45f">?</tspan></text>
-        <text x="505" y="289" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="2.5" fill="#7d8ba3">1 FORM</text>
-        <!-- ? badge hovering above the roof: the question that should have been asked before building -->
-        <circle cx="280" cy="84" r="19" stroke="#e8cf8f" stroke-width="1.8" fill="rgba(216,180,95,0.10)"/>
-        <text x="280" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" font-weight="600" fill="#e8cf8f">?</text>
+        <!-- spec sheet -->
+        <rect x="70" y="28" width="420" height="392" rx="3" fill="rgba(85,104,138,0.05)" stroke="#55688a" stroke-width="1.8"/>
+        <!-- header -->
+        <text x="90" y="60" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="3" fill="#7d8ba3">THE HABIT · ELEVEN PARTS</text>
+        <text x="470" y="60" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2" fill="#d8b45f">11/11</text>
+        <line x1="90" y1="72" x2="470" y2="72" stroke="#d8b45f" stroke-width="2"/>
+        <!-- eleven checked habits -->
+        <path d="M90 109 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="116" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">ASK THE QUESTION</text>
+        <path d="M90 134 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="141" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">REVISIT THE UNIT OF WORK</text>
+        <path d="M90 159 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="166" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">MULTIPLY THE DESIGN</text>
+        <path d="M90 184 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="191" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">TRACE THE WORKFLOW</text>
+        <path d="M90 209 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="216" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">PUT RISKS IN THE PLAN</text>
+        <path d="M90 234 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="241" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">PLAN BEFORE EXECUTE</text>
+        <path d="M90 259 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="266" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">KNOW WHO YOU'RE ACTING FOR</text>
+        <path d="M90 284 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="291" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">LIST THE UNSEEN CASES</text>
+        <path d="M90 309 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="316" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">AUDIT AS AN OUTSIDER</text>
+        <path d="M90 334 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="341" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#93a1b3">VERIFY THE OUTPUT</text>
+        <path d="M90 359 l4 4 l9 -10" stroke="#d8b45f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="114" y="366" font-family="JetBrains Mono, monospace" font-size="13.5" letter-spacing="1.5" fill="#d8b45f">DESIGN FOR FAILURE</text>
         <!-- caption -->
-        <text x="280" y="424" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" letter-spacing="4.5" fill="#d8b45f">THE ASSUMPTION IS IN THE FOUNDATION</text>
+        <text x="280" y="448" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="4.5" fill="#d8b45f">EACH ONE LEARNED THE HARD WAY</text>
       </svg>
     </div>
   </div>

@@ -94,6 +94,16 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9i — post 07 COVER REDESIGN: spec-sheet concept, approved + uploaded)
+
+- Saad: "I think the cover needs to change as well because now it's more than just assumptions point." The blueprint-house art told only the assumptions story; the article is now an eleven-habit piece.
+- **New concept (approved "perfect"):** technical spec-sheet of the eleven habits. Sheet rect + "THE HABIT · ELEVEN PARTS" header with gold rule, "11/11" counter, eleven gold check marks with mono labels (ASK THE QUESTION ... DESIGN FOR FAILURE, last row gold-accented), caption "EACH ONE LEARNED THE HARD WAY" (echoes the lede). Cover title text now matches the article title: "How to think like / a senior developer." Meta: "eleven habits · learned the hard way". Same ink/dot-grid/gold brand; eyebrow + byline unchanged.
+- Both versions re-rendered (2000x840 + 1600x840 via viewBox scaling), 37/37 ad-hoc structural+pixel checks passed (11 ticks, rule, caption in both renders; zero blueprint-house leftovers), temp script cleaned up.
+- Saad uploaded cover.png to dev.to; I set cover_image in devto.md frontmatter to the upload URL and PUT to draft 4304603 — verified from API (cover-set=true, published:false).
+- **Still required before live:** Saad's out-loud voice pass, flip published:true, cross-posts, profile/portfolio cards.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
