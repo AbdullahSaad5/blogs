@@ -5,6 +5,48 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9 — post 07 edit pass, factual pass, title lock, devto.md staged)
+
+- **Edit pass on post 07** (`posts/07-senior-thinking/`): mechanical checks clean (0 em-dashes, no AI-tell phrases, no antithesis-reversal, all paragraphs ≤240 chars, 1,365 words). Tightened one redundancy (browser on-demand sentence duplicated). Added a VERIFY block to the draft header flagging 5 load-bearing claims for Saad.
+- **Title locked: "How to Think Like a Senior Developer"** (Saad chose option 2 of 5; safe/searchable register, no antithesis-reversal shapes). Recorded in draft header.
+- **Factual pass COMPLETE (all 5 confirmed by Saad):**
+  1. Browser memory 300–400 MB per user + thousands of users → hundreds of GB: confirmed as written.
+  2. Browser optimizations: **built and tested locally, not shipped** — draft now says exactly that ("We built and tested those optimizations locally."), per the [shipped] feedback-log rule.
+  3. Stripe fix order: payment intent comes first, its ID saved to the DB, THEN charge; webhook matches later. Draft rewritten ("I reordered the workflow so the payment intent came first...").
+  4. Stripe retries: handler returns 200 (no Stripe retry), webhook saved to DB as pending, cron matches 3–4 more times, stays pending for admin review, logged. Draft rewritten (split into two paragraphs to stay ≤240 chars).
+  5. Two per-user services: confirmed.
+- **devto.md built + verified**: frontmatter (title, published:false, tags `programming, career, softwareengineering, productivity`, cover blank), body byte-identical to draft minus the H1/comment, 0 em-dashes, no AI tells, 1,467 words total.
+- **Still required before live:** Saad's out-loud voice pass on the final text (read it aloud), cover (1600x840 ink+gold brand template, drag-drop in editor — API can't upload), then flip published:true (PUT to the dev.to article id once staged), then Medium import + Hashnode paste with canonical → dev.to, then profile README + portfolio card.
+
+---
+
+## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
+
+- **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
+  senior thinking means testing whether a report is a symptom, tracing a change through its callers
+  and workflows, documenting decisions and assumptions, asking the client obvious questions, and
+  putting risk into the estimate instead of promising the best case.
+- **Four real stories captured:** (1) an e-commerce catalog/stock/listing model rebuilt after the
+  team assumed all three shared one lifecycle; (2) seven marketplace categories became 43, so the
+  team replaced hard-coded field unions with runtime schema-driven forms; (3) per-user agent browser
+  control worked but carried roughly 300–400 MB per user, leading to a lighter UI plus on-demand and
+  idle teardown; (4) a missing background check traced to Stripe delivering a webhook before
+  MongoDB stored the payment intent ID, fixed by persisting first and making missing-record delivery
+  retryable.
+- **Workflow correction:** drafting initially started too early. Re-read the complete blog process
+  (`CLAUDE.md`, README, PLAN, WORKLOG, feedback checklist, voice profile, ideas, publishing notes)
+  plus the interview/shaping/editing skills. Returned to raw capture, then shaped only after Saad
+  chose the e-commerce assumption as the opening.
+- **First complete `draft.md` written** (~1,365 words). Path: wrong assumption → ask/document →
+  7-to-43 extensibility → per-user scaling → Stripe workflow tracing → risk-aware estimation.
+  Mechanical pass currently clean: every paragraph ≤240 characters, 0 em-dashes, and none of the
+  stored banned AI-tell phrases.
+- **Still required:** Saad factual + out-loud voice pass, especially the browser service memory
+  figure and Stripe retry wording; tighten any sections that sound too polished; lock the title.
+  No `devto.md`, cover, staging, or publishing work has been done.
+
+---
+
 ## 2026-07-13 (session 7 — post 06 two-tokens OAuth explainer drafted + pushed as dev.to draft)
 
 - **Post 06 created** (`posts/06-two-tokens-oauth/`). The "Why two tokens? OAuth access vs refresh,

@@ -24,6 +24,11 @@ new post.**
   NOT autopilot-publish an AI draft. The brand moat is "real practitioner"; publishing words
   Saad didn't write erodes it, and he must be able to defend every claim and number live.
   _(from Post 02 process)_
+- **[voice] Kill antithesis-reversal aphorisms.** The negation-then-parallel-correction line
+  ("It's not X, it's Y", "I didn't get smart, I got lucky", "it wasn't the tool, it was the
+  process") is a dead AI tell, same family as the banned "not just X, it's Y". Punchy and quotable
+  is exactly why it reads as machine-generated. State the true half plainly, drop the setup: "I got
+  lucky here," not "I didn't get smart, I got lucky." _(from Saad, voice pass)_
 - **[comments] Vet comment authenticity before treating it as validation.** Check account age,
   post velocity, bio, and whether multiple "independent" comments converge on the same angle
   with the same cadence (an LLM tell). dev.to is full of AI / growth-hack commenting. Weak

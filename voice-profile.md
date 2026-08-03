@@ -113,6 +113,11 @@ in `~/Downloads/1782557923882-scopien_team_sync_docs` (37 files, his turns in th
 - Other AI tells to avoid: "It's not just X, it's Y" constructions, rule-of-three everywhere,
   "Here's the kicker", overusing bold, perfectly balanced sentence pairs, "delve", "robust",
   "seamless", "leverage". Match the comma-and-"so" flow.
+- **Antithesis-reversal aphorisms** (Saad flagged). The negation-then-correction with parallel
+  structure: "It's not X, it's Y", "I didn't get smart, I got lucky", "it wasn't the tool, it was
+  the process". Punchy, quotable, and a dead AI giveaway. Say the true half plainly and drop the
+  setup: write "I got lucky here," not "I didn't get smart, I got lucky." Same family as the "not
+  just X, it's Y" ban above; kill all of it.
 - **Self-referential writerly framing** (Saad flagged on post 03). Phrases that announce a profound
   thought is coming instead of just saying it: "the line I keep coming back to is...", "the thing I
   keep chewing on...", "I want to be careful not to...", "sit with it for a second", "here's the
