@@ -76,17 +76,17 @@ So we built a smaller custom UI, lighter communication with the front end, and t
 
 The fourth habit: when something breaks, trace the whole workflow before touching anything.
 
-A product owner once told me a user had paid for a background check and the check never ran, so their status never changed and they couldn't continue. Stripe showed the payment. The easy assumption was that the background-check API had changed, or that our request to it failed.
+A product owner once told me a user had paid for a background check and the check never ran, and their status never changed. They couldn't continue. Stripe showed the payment. The easy assumption was that the background-check API had changed, or that our request to it failed.
 
 I traced the workflow backward instead. We charged the user's saved payment method, wrote the payment intent ID to MongoDB, then handled Stripe's webhook. The webhook used that ID to find the user and start the check.
 
 Sometimes Stripe delivered the webhook before MongoDB finished the write. The handler looked for the ID, found nothing, discarded the event, and the user stayed stuck.
 
-The complaint was accurate but incomplete. The visible failure was "I paid and nothing happened." The real failure was the timing assumption underneath. The reported problem was the last symptom, not the cause.
+The complaint was accurate but incomplete. The visible failure was "I paid and nothing happened." Underneath, the real problem was the timing assumption. The reported symptom wasn't the cause.
 
 The fix had two layers. The payment intent comes first, so its ID already exists. We save it to the database, then charge. The webhook always has a record to match.
 
-And I stopped depending on one perfectly timed delivery: the handler returns 200 so Stripe doesn't retry, the webhook is saved as pending, a cron tries to match it three or four more times, and if it still finds nothing, it stays pending for an admin to review, logged in case we need it later.
+And I stopped depending on one perfectly timed delivery: the handler returns 200 so Stripe doesn't retry, and the webhook is saved as pending. A cron tries to match it three or four more times, and if it still finds nothing, it stays pending for an admin to review, logged in case we need it later.
 
 I use the same idea for regression checks. Find every place that calls the code you're changing, then trace the workflows around those callers. A local fix can change behavior somewhere else in the system.
 
@@ -98,7 +98,7 @@ That rebuild I described at the top is why. We built the wrong model for a long 
 
 The clean path always gives you a best-case number: the API behaves, the existing code has no surprises, the test data is ready, every assumption holds. That number is the floor of a good estimate, not the estimate.
 
-A useful estimate carries its risks: what we still need to verify, which dependencies are outside our control, which parts need regression testing, and which assumptions the number depends on, so when one of them changes, the client can see why the plan changes with it.
+A useful estimate carries its risks: what we still need to verify, which dependencies are outside our control, which parts need regression testing. And which assumptions the number depends on, so when one of them changes, the client can see why the plan changes with it.
 
 This is another reason documentation matters. It keeps the estimate tied to what we knew when we made it.
 
@@ -110,7 +110,7 @@ I built an agent that was supposed to do real work, and the planning turned out 
 
 So we split it: a separate planner that investigated and proposed steps, and an executor that ran the approved ones. Every step carried a criticality, must, should, or could.
 
-Destructive steps got classified before they could run, two layers deep, one reading the intent and one reading the raw command. The classifier caught roughly 99% of destructive commands across the 1,200-command action space, and the misses were the ones that mattered, because a destructive command waved through is the expensive kind of miss.
+Destructive steps got classified before they could run, two layers deep, one reading the intent and one reading the raw command. The classifier caught roughly 99% of destructive commands across the 1,200-command action space, and the misses were the ones that mattered. A destructive command waved through is the expensive kind of miss.
 
 The planning was harder than the doing. That's the point. A senior plan treats the irreversible steps like they cost something.
 
@@ -152,7 +152,7 @@ I built a wrapper so my agent could write documents without a five-thousand-toke
 
 Every document had the same shape, generic structure, generic wording, the same deck no matter what it was for. One slide overflowed its table and just said "(cont.)".
 
-The agent declared victory the moment the file existed. The file was the exit ramp: the work looked done because a thing existed, not because the thing was right. A passing build isn't a working feature. Look at what came out before you call it done.
+The agent declared victory the moment the file existed. The file was the exit ramp: the work looked done the second a thing existed, and the thing was generic. A passing build isn't a working feature. Look at what came out before you call it done.
 
 ## Make failure cost as little as possible
 

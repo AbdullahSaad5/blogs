@@ -115,6 +115,20 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9k — post 07 VOICE PASS, Saad: "do the voice pass please")
+
+- Walked the full text aloud against voice-profile.md. Five fixes:
+  1. Stripe mechanism sentence split for one-breath length ("...saved as pending. A cron tries to match it...").
+  2. Estimate-risks sentence split ("...regression testing. And which assumptions...").
+  3. Classifier sentence split ("...the ones that mattered. A destructive command waved through...").
+  4. Removed a banned parallel-negation: "the work looked done because a thing existed, not because the thing was right" → "the work looked done the second a thing existed, and the thing was generic".
+  5. De-balanced the "visible failure / real failure" pair → "Underneath, the real problem was the timing assumption. The reported symptom wasn't the cause."
+- "so" budget: thinned section 4 from 3 to 2 (profile: 1-2 per section). Now 0-2 per section everywhere.
+- **Final mechanicals:** 0 em-dashes; no antithesis-reversal; no "not because" parallel; no AI tells; max paragraph 343 chars; 23 contractions; all 11 habit leads + all verified facts intact; 2,287 words.
+- devto.md rebuilt (byte-identical), PUT to draft 4304603, verified (published:false). COMMIT = the article is voice-clean per the written pass; Saad's own read-aloud is the last human gate before publish.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
