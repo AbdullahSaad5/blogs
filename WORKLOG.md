@@ -31,6 +31,16 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9c — post 07 VOICE REWRITE, Saad: "looks and sounds different than the last 5-6")
+
+- **Diagnosis:** post 07 read as a formal LinkedIn-advice essay while 04/05/06 read as a person telling stories. Concrete diffs vs the house register: (1) ZERO contractions ("do not"/"cannot"/"it is" everywhere) vs "didn't"/"I'm"/"can't"; (2) lecture mode ("Useful documentation preserves the context around a decision") vs story mode ("I jumped out of my chair", "hit send in Postman"); (3) no scenes, stakes, or texture; (4) the earlier ≤240-char paragraph constraint had chopped the prose into listicle staccato, while published posts run 300-600 char thought-streams with short punch lines between.
+- **Fix — full rewrite in house voice**, facts untouched (all 5 verified claims intact, incl. "built and tested locally" and the intent-first/cron/admin-review Stripe mechanism). Kept: locked title, section structure, the four questions list, "Assumptions become architecture" thesis line, closing beat.
+- **Voice markers in the rewrite:** contractions restored (I've, don't, couldn't, it's, you're), "So we changed the system...", "So we built a smaller custom UI...", short punches ("Then the client said 43.", "The form worked."), scenes (the client demo, the product-owner report, the 36-more-categories estimate), first-person stakes throughout. Remaining long paragraphs (259-350 chars) are intentional thought-streams matching 05/06.
+- **Mechanicals:** 0 em-dashes, no AI tells, no antithesis-reversal, 1,311 body words. devto.md rebuilt (body byte-identical to draft), PUT to dev.to draft 4304603, verified via /api/articles/me/unpublished (new opening present, ~1,314 words, published:false).
+- **Still required before live:** Saad's out-loud voice pass on the NEW text (the rewrite is exactly what needs his ear now), cover drag-drop (cover.png) in the editor, flip published:true, cross-posts, profile/portfolio cards.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
