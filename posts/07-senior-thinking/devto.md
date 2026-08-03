@@ -36,7 +36,7 @@ Those four questions would have changed our database model before we built the f
 
 The second half is writing the answers down: the requirement, the assumptions we confirmed, the risks we found, the options we rejected, and why we picked the final approach. Someone can come back later and understand the decision without rebuilding the whole conversation. The code keeps the decision long after the conversation is forgotten.
 
-## When seven categories became 43
+## When the scope multiplies, revisit the unit of work
 
 The second habit: when the scope multiplies, revisit the unit of work.
 
