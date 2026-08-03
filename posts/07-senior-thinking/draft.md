@@ -14,6 +14,8 @@ POINT-FIRST RESTRUCTURE 2026-08-03: per Saad "give points and tell stories along
 
 # How to Think Like a Senior Developer
 
+Thinking like a senior developer is a habit, and I've learned it the hard way. Here's the habit in five parts, and the story behind each one.
+
 We were building an e-commerce portal where a seller enters a product once and publishes it to their own website, eBay, Amazon, or all three.
 
 We made one form for everything. Product information, images, inventory, listing details, all in one submission. One click created the catalog entry, added the stock, and published the listings.
@@ -31,8 +33,6 @@ Listings were separate too. Ten listings against one batch of stock, more listin
 The form worked. It worked according to a business model the client never wanted.
 
 By then the assumption was in the database, the API, the inventory workflow, the form, and the listing logic. We rebuilt it. Assumptions become architecture fast, and once a client sees the wrong one in a demo, it's expensive to remove.
-
-That lesson cost us the rebuild. Here are the habits that would have caught it, and the stories behind them.
 
 ## Ask the question before the code answers it
 

@@ -52,6 +52,16 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9e — post 07 LEDE ADDED, Saad: "the starting starts off with a story straight away and the title and the body seems disconnected")
+
+- **Diagnosis:** title promised "how to think like a senior developer" but the first line was the e-commerce war story — no bridge between the promise and the body.
+- **Fix:** two-sentence lede inserted before the story: "Thinking like a senior developer is a habit, and I've learned it the hard way. Here's the habit in five parts, and the story behind each one." The story now reads as the first illustration of the promise instead of a disconnected opening. Removed the now-redundant post-story framing line ("That lesson cost us the rebuild...") — the lede does that job.
+- **Flow now:** title → lede (thesis + five-parts promise) → opening story (the mistake) → five habit sections (each: point → story → lesson) → recap close.
+- **Mechanicals:** 0 em-dashes, no AI tells, 1,561 body words, max paragraph 347. devto.md rebuilt (byte-identical), PUT to dev.to draft 4304603, verified via /api/articles/me/unpublished (lede + habit spine present, old framing gone, published:false).
+- **Still required before live:** Saad's out-loud voice pass, cover drag-drop (cover.png), flip published:true, cross-posts, profile/portfolio cards.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
