@@ -41,6 +41,17 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9d — post 07 POINT-FIRST RESTRUCTURE, Saad: "give points and tell stories along the way")
+
+- **Diagnosis:** the voice rewrite overcorrected into pure storytelling; the lessons were implied, not delivered. Saad wants the article to TEACH "how to think like a senior dev" AND tell the stories as evidence ("what happens if you don't", "how I learned it the hard way").
+- **Fix — point-first structure:** each section now opens with the habit stated plainly, then the story shows the consequence, then the lesson lands. Added an explicit framing line after the opening story ("Here are the habits that would have caught it, and the stories behind them.") and a recap section that lists the five habits outright.
+- **The five habits (the takeaway spine):** (1) ask the question before the code answers it, (2) when the scope multiplies, revisit the unit of work, (3) multiply the design before calling it done, (4) trace the whole workflow, (5) put the risks inside the plan.
+- **New beats added:** "That's the price of skipping this habit" (end of section 2); "That's the junior move, and I don't mean junior as an insult" (section 3); "That rebuild I described at the top is why" ties the estimation habit to the opening story (grounded in confirmed facts — no invented scenes). Facts unchanged (all 5 verified claims intact).
+- **Mechanicals:** 0 em-dashes, no AI tells, no antithesis-reversal, contractions present, 1,554 body words, max paragraph 347 chars (house-voice thought-streams). devto.md rebuilt (body byte-identical), PUT to dev.to draft 4304603, verified via /api/articles/me/unpublished (point-spine marker present, published:false).
+- **Still required before live:** Saad's out-loud voice pass on THIS version, cover drag-drop (cover.png) in the editor, flip published:true, cross-posts, profile/portfolio cards.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
