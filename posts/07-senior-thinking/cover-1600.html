@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0c11;
+    --ink:#e8edf4;
+    --gold:#d8b45f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1600px;height:840px}
+  body{
+    background:
+      radial-gradient(1100px 680px at 78% 36%, rgba(216,180,95,0.08), transparent 60%),
+      radial-gradient(760px 520px at 68% 96%, rgba(201,162,74,0.09), transparent 62%),
+      radial-gradient(900px 600px at 8% 92%, rgba(40,70,90,0.16), transparent 60%),
+      #0a0c11;
+    color:var(--ink);
+    font-family:"Fraunces",serif;
+    overflow:hidden;position:relative;
+  }
+  .grid{
+    position:absolute;inset:0;
+    background-image:radial-gradient(rgba(120,140,160,0.09) 1.1px, transparent 1.2px);
+    background-size:32px 32px;
+    mask-image:linear-gradient(95deg, #000 30%, transparent 90%);
+    -webkit-mask-image:linear-gradient(95deg, #000 30%, transparent 90%);
+  }
+  .frame{position:absolute;inset:46px;border:1px solid rgba(120,150,170,0.16);border-radius:4px}
+  .wrap{position:relative;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 100px}
+
+  .left{max-width:800px}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;font-weight:500;
+    font-size:18px;letter-spacing:0.42em;text-transform:uppercase;
+    color:var(--gold);opacity:0.92;margin-bottom:28px;
+  }
+  .eyebrow .dot{color:#46566a;margin:0 14px}
+  h1{font-weight:600;font-size:84px;line-height:0.97;letter-spacing:-0.014em;color:#f2f6fb}
+  h1 .accent{
+    display:block;font-weight:500;
+    -webkit-text-fill-color:transparent;
+    background:linear-gradient(92deg,#e8cf8f,#c9a24a 78%);
+    -webkit-background-clip:text;background-clip:text;margin-top:10px;
+  }
+  .meta{
+    margin-top:36px;font-family:"JetBrains Mono",monospace;font-weight:400;
+    font-size:19px;letter-spacing:0.01em;color:#93a1b3;
+  }
+  .meta b{color:#c6d0dc;font-weight:500}
+  .meta .bar{color:#3c4a5c;margin:0 15px}
+
+  .byline{
+    position:absolute;left:100px;bottom:74px;
+    font-family:"JetBrains Mono",monospace;font-size:18px;letter-spacing:0.06em;color:#5d6b7d;
+  }
+  .byline span{color:var(--gold);opacity:0.8}
+
+  /* ---- art: blueprint house, gold dashed foundation = the assumption ---- */
+  .art{position:relative;width:460px;height:640px;flex:none}
+  .art svg{margin-top:76px}
+  .art::before{
+    content:"";position:absolute;left:60px;top:150px;width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(closest-side, rgba(216,180,95,0.09), transparent 70%);
+    filter:blur(18px);
+  }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="frame"></div>
+
+  <div class="wrap">
+    <div class="left">
+      <div class="eyebrow">Thinking<span class="dot">/</span>Beyond</div>
+      <h1>Assumptions<span class="accent">become architecture.</span></h1>
+      <div class="meta"><b>one form, three lifecycles</b><span class="bar">·</span><b>seven categories became 43</b></div>
+    </div>
+
+    <div class="art">
+      <!-- native viewBox scaling: no CSS transforms, so the SVG renders identically at any width -->
+      <svg width="459" height="377" viewBox="0 0 560 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- ground -->
+        <line x1="70" y1="392" x2="490" y2="392" stroke="#3d4f6e" stroke-width="1.5"/>
+        <!-- foundation slab: dashed gold = the assumption -->
+        <rect x="90" y="356" width="380" height="26" rx="2" fill="rgba(216,180,95,0.07)" stroke="#e0bd6d" stroke-width="2" stroke-dasharray="7 6"/>
+        <!-- walls -->
+        <rect x="102" y="210" width="356" height="146" fill="rgba(85,104,138,0.06)" stroke="#55688a" stroke-width="1.8"/>
+        <!-- roof -->
+        <polygon points="102,210 280,118 458,210" fill="rgba(85,104,138,0.10)" stroke="#55688a" stroke-width="1.8" stroke-linejoin="round"/>
+        <line x1="280" y1="118" x2="280" y2="210" stroke="#3d4f6e" stroke-width="1.2" stroke-dasharray="3 5"/>
+        <!-- door -->
+        <rect x="258" y="292" width="44" height="64" fill="none" stroke="#55688a" stroke-width="1.6"/>
+        <circle cx="294" cy="324" r="1.8" fill="#8ba0c4"/>
+        <!-- windows -->
+        <rect x="150" y="252" width="38" height="38" fill="none" stroke="#55688a" stroke-width="1.6"/>
+        <line x1="150" y1="271" x2="188" y2="271" stroke="#3d4f6e" stroke-width="1.2"/>
+        <line x1="169" y1="252" x2="169" y2="290" stroke="#3d4f6e" stroke-width="1.2"/>
+        <rect x="372" y="252" width="38" height="38" fill="none" stroke="#55688a" stroke-width="1.6"/>
+        <line x1="372" y1="271" x2="410" y2="271" stroke="#3d4f6e" stroke-width="1.2"/>
+        <line x1="391" y1="252" x2="391" y2="290" stroke="#3d4f6e" stroke-width="1.2"/>
+        <!-- left dimension -->
+        <line x1="72" y1="210" x2="72" y2="356" stroke="#55688a" stroke-width="1.4"/>
+        <line x1="66" y1="210" x2="78" y2="210" stroke="#55688a" stroke-width="1.4"/>
+        <line x1="66" y1="356" x2="78" y2="356" stroke="#55688a" stroke-width="1.4"/>
+        <!-- right dimension -->
+        <line x1="488" y1="210" x2="488" y2="356" stroke="#55688a" stroke-width="1.4"/>
+        <line x1="482" y1="210" x2="494" y2="210" stroke="#55688a" stroke-width="1.4"/>
+        <line x1="482" y1="356" x2="494" y2="356" stroke="#55688a" stroke-width="1.4"/>
+        <!-- dimension labels (blueprint annotations) -->
+        <text x="40" y="285" transform="rotate(-90 40 285)" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="2.5" fill="#7d8ba3">3 LIFECYCLES<tspan fill="#d8b45f">?</tspan></text>
+        <text x="505" y="289" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="2.5" fill="#7d8ba3">1 FORM</text>
+        <!-- ? badge hovering above the roof: the question that should have been asked before building -->
+        <circle cx="280" cy="84" r="19" stroke="#e8cf8f" stroke-width="1.8" fill="rgba(216,180,95,0.10)"/>
+        <text x="280" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" font-weight="600" fill="#e8cf8f">?</text>
+        <!-- caption -->
+        <text x="280" y="424" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" letter-spacing="4.5" fill="#d8b45f">THE ASSUMPTION IS IN THE FOUNDATION</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="byline">Syed <span>Abdullah</span> Saad</div>
+</body>
+</html>

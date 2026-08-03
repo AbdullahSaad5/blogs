@@ -20,6 +20,17 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9b — post 07 covers designed, iterated, approved)
+
+- **Cover v1 (rejected by Saad):** three isometric blocks (CATALOG/STOCK/LISTING) fused as one mass with a dashed-gold "assumed: one lifecycle" ring + "?" badge. Rendered + pixel-verified, but Saad: "the boxes thing don't make sense" — too cryptic without the post.
+- **Cover v2 (APPROVED):** blueprint-house concept matching the H1 "Assumptions become architecture" — steel line-drawn walls/roof (line-drawn technical plate, portfolio DNA), dashed-gold foundation slab (the assumption), dimension annotations "3 LIFECYCLES?" (rotated, left) + "1 FORM" (right), caption "THE ASSUMPTION IS IN THE FOUNDATION", gold "?" badge.
+- **Iteration during v2:** (1) 1600 version initially clipped the art via CSS transform:scale — rebuilt with native viewBox scaling (all labels moved inside the SVG as <text>; no CSS transforms — Chrome compositing quirk); (2) Saad: "in 1600 the house moves upwards" — the 377px-tall scaled SVG box sat at the same top anchor as the 2000's 460px box, so the drawing rode ~76px high with dead space below; fixed with `.art svg{margin-top:76px}` so the caption lands at the same page rows in both sizes (verified: caption peak rows 513-523 vs 514-522); (3) Saad: "question mark is not placed good" — badge moved from the wall/slab junction to hover ABOVE the roof apex (the question that should have been asked before building).
+- **Files:** `cover.html` + `cover.png` (2000x840, dev.to), `cover-1600.html` + `cover-1600.png` (1600x840, Hashnode). Generators saved next to PNGs per the standing rule. All 30 structural/pixel checks passed (ad-hoc script, cleaned up).
+- **Approved by Saad** ("yes they're good now I love them").
+- **Next:** stage devto.md to dev.to as draft (publish-devto.sh), cover drag-drop in editor (API can't upload), voice pass, publish, cross-posts.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
