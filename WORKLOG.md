@@ -62,6 +62,13 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9f — post 07 fact correction: "out of stock", not "disappear")
+
+- Saad corrected the opening-story assumption: the team's wrong assumption was that a depleted listing would SHOW OUT OF STOCK (listing tied to the stock lifecycle), not that the listing would disappear. Line fixed in draft.md + devto.md, PUT to dev.to draft 4304603, verified via API (corrected line present, old wording gone, published:false). Factual-pass comment block updated.
+- **Still required before live:** Saad's out-loud voice pass, cover drag-drop (cover.png), flip published:true, cross-posts, profile/portfolio cards.
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:

@@ -13,7 +13,7 @@ We were building an e-commerce portal where a seller enters a product once and p
 
 We made one form for everything. Product information, images, inventory, listing details, all in one submission. One click created the catalog entry, added the stock, and published the listings.
 
-It made sense to us. We assumed the client wanted to sell exactly what they entered, and when the stock ran out, the listings should disappear.
+It made sense to us. We assumed the client wanted to sell exactly what they entered, and when the stock ran out, the listing would show out of stock.
 
 Nobody asked whether the product, the stock, and the listing shared one lifecycle.
 

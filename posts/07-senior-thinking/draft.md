@@ -10,6 +10,7 @@ FACTUAL PASS COMPLETE 2026-08-03 (all 5 confirmed by Saad; draft updated accordi
 
 VOICE REWRITE 2026-08-03: full pass into house register (contractions, first-person scenes, so-chained flow) per Saad's "looks and sounds different" flag. Facts unchanged.
 POINT-FIRST RESTRUCTURE 2026-08-03: per Saad "give points and tell stories along the way" - each section now leads with the habit (what a senior does), the story shows the consequence (what happens if you don't), the lesson lands at the end. Facts unchanged.
+FACT CORRECTION 2026-08-03: the wrong assumption was "listing shows out of stock", NOT "listing disappears" (Saad). Line fixed.
 -->
 
 # How to Think Like a Senior Developer
@@ -20,7 +21,7 @@ We were building an e-commerce portal where a seller enters a product once and p
 
 We made one form for everything. Product information, images, inventory, listing details, all in one submission. One click created the catalog entry, added the stock, and published the listings.
 
-It made sense to us. We assumed the client wanted to sell exactly what they entered, and when the stock ran out, the listings should disappear.
+It made sense to us. We assumed the client wanted to sell exactly what they entered, and when the stock ran out, the listing would show out of stock.
 
 Nobody asked whether the product, the stock, and the listing shared one lifecycle.
 
