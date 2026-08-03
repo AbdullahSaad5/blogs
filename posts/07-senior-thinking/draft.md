@@ -118,11 +118,11 @@ The planning was harder than the doing. That's the point. A senior plan treats t
 
 The seventh habit: know who you're acting for.
 
-My agent once wrote to the wrong client's Salesforce. It was doing real work in a real account, and nothing pinned down which client it was acting for. The context lived in the conversation, and the conversation was wrong.
+My agent once wrote to the wrong client's Salesforce. The real connection id was sitting in its memory, and it had every reason to think it was relevant. Telling the model to be careful wouldn't fix it, because a confidently wrong model doesn't ask.
 
-We fixed it by making the tenant part of the runtime, not the prompt: the agent carries which client it's acting for, and it stops when it's unsure.
+So we took the ids away entirely. The agent never sees a real connection id. It gets an alias, a name that only means something inside the session, and a mapper that the agent's OS user can't read turns the alias into the real id on the way out. The wrong choice became structurally impossible instead of just discouraged.
 
-Before any change, ask who this is for. Which client, which tenant, which account. The prompt can't be trusted to remember. The platform has to know.
+It's not perfect. A confidently wrong model can still reach for the wrong alias, which is exactly why the steps stay visible in plan mode before they run. But the principle holds: before any change, ask who this is for. Which client, which tenant, which account. Don't hand identity to something that can be talked into anything.
 
 ## List the cases nobody raised
 

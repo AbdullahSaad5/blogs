@@ -104,6 +104,17 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9j — post 07 HOLE-POKING, Saad: "poke holes")
+
+- **Hole found + fixed (habit 7):** the draft claimed the wrong-client-Salesforce fix was "making the tenant part of the runtime... it stops when it's unsure". Post 01's actual fix: ALIASES (agent never sees real connection ids; a mapper another OS user owns resolves them) + OS isolation. Worse, "stops when it's unsure" was the KNOWN GAP of the alias approach (post 01: "a confidently wrong model doesn't ask"). Rewritten to match the published story, including the honest "it's not perfect... steps stay visible in plan mode" caveat.
+- **Hole found + fixed (description):** devto.md frontmatter description still told only the e-commerce story. Now: "Thinking like a senior developer is a habit, and I learned it the hard way. Eleven parts of it, with the story behind each one: the form nobody questioned, the seven categories that became 43, the Stripe webhook race, the key that could mint authority." (252 chars)
+- **Verified clean against sources:** Shajrah "15 minutes / middleware never checked status" = exact match with KNOWN_ISSUES.md; browser figures (300-400 MB, two services, hundreds of GB) consistent; Stripe mechanism consistent; post 05 "three services, different key shapes" matches published post; 99%/1,200-command stat from post 02 with miss-asymmetry hedge.
+- **Flagged, kept:** habits 1+2 share the e-commerce project (lede promises "the story behind each one" — mostly holds); habit 5 has no fresh story (references the opening rebuild); title says "think" but most habits are "do" (the thinking lives in habit 1's questions + the close).
+- **Commenter-attack surface:** "eleven habits = checklist" (user chose point-first); "who are you" — mitigated by confessional lede + receipts; the 99% number is the one claim a pedant could push on, hedged.
+- devto.md rebuilt, PUT to draft 4304603, verified (alias fix present, old claim gone, new description live, published:false).
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
