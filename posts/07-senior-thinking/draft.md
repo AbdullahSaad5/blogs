@@ -17,7 +17,7 @@ CONCISION PASS 2026-08-03: per Saad "make it concise" - every section compressed
 
 # How to Think Like a Senior Developer
 
-Thinking like a senior developer is a habit, and I've learned it the hard way. Here's the habit in eleven parts, and the story behind each one.
+Thinking like a senior developer is a habit, and I've learned it the hard way. Here's the habit in eleven parts, and the stories behind them.
 
 We were building an e-commerce portal where a seller enters a product once and publishes it to their own website, eBay, Amazon, or all three. We made one form for everything, and one click created the catalog entry, added the stock, and published the listings.
 
@@ -44,7 +44,7 @@ Some of the useful questions sound dumb:
 
 Those four questions would have changed our database model before we built the form. Nobody asked them, so the wrong model shipped, and the demo is where we found out. That's the price of skipping this habit.
 
-The second half is writing the answers down: the requirement, the assumptions we confirmed, the risks we found, the options we rejected, and why we picked the final approach. Someone can come back later and understand the decision without rebuilding the whole conversation. The code keeps the decision long after the conversation is forgotten.
+The second half of the habit is writing the answers down: the requirement, the assumptions we confirmed, the risks we found, the options we rejected, and why we picked the final approach. Someone can come back later and understand the decision without rebuilding the whole conversation. The code keeps the decision long after the conversation is forgotten.
 
 ## When the scope multiplies, revisit the unit of work
 
@@ -76,7 +76,7 @@ So we built a smaller custom UI, lighter communication with the front end, and t
 
 The fourth habit: when something breaks, trace the whole workflow before touching anything.
 
-A product owner once told me a user had paid for a background check and the check never ran, and their status never changed. They couldn't continue. Stripe showed the payment. The easy assumption was that the background-check API had changed, or that our request to it failed.
+A product owner once told me a user had paid for a background check that never ran, and their status never changed. They couldn't continue. Stripe showed the payment. The easy assumption was that the background-check API had changed, or that our request to it failed.
 
 I traced the workflow backward instead. We charged the user's saved payment method, wrote the payment intent ID to MongoDB, then handled Stripe's webhook. The webhook used that ID to find the user and start the check.
 
@@ -108,7 +108,7 @@ The sixth habit: plan before you execute. Most of the time belongs in the planni
 
 That's where you expand the domain of everything. Go down every branch and decide what should happen on each one. Walk the alternative flows for everything that can go right, then look at what can go wrong and how you'd come back from it.
 
-The rebuild I described at the top is the same lesson from the other side. The questions we didn't ask, the plan we didn't make, the alternative flows we never walked. The plan was the product, and we rushed past it to the code.
+The e-commerce project is the same lesson from the other side. The questions we didn't ask, the plan we didn't make, the alternative flows we never walked. The plan was the product, and we rushed past it to the code.
 
 If I had an hour to solve a problem, I'd spend 55 minutes thinking about the problem and 5 minutes thinking about solutions. A senior plan also knows which steps can't be undone, and treats the irreversible ones like they cost something.
 
@@ -118,7 +118,7 @@ The seventh habit: know who you're acting for. Get into the head of the person w
 
 How will they look at the system? How will they understand it? How do your words affect them, every label, every error message, every confirmation? How does the workflow run for them, not for you? And what's the easiest way to make it dumb-proof, so a user can't accidentally do much damage?
 
-We built the e-commerce form the way we would use it. The client operated differently: the catalog existed once, shipments added stock against it, and a depleted batch didn't kill a listing. We never got into their head, and the demo is where we found out.
+We built the e-commerce form the way we would use it, and the client operated differently. That's the gap this habit closes.
 
 The user is the actor the system works for. If you don't know how they think, you're building for yourself.
 
@@ -130,7 +130,7 @@ I built a billing system with AI doing most of the work. It was fast, and it han
 
 Charge the difference now or next cycle? Migrate everyone or grandfather them? Those questions never came up, because nothing in the request mentioned them. The model didn't see the case at all. Someone had to enumerate it.
 
-Existing users, mid-cycle changes, migrations. The code handles what you tell it. The list of what you didn't tell it is yours to make. A client demo is where those gaps surface first.
+Existing users, mid-cycle changes, migrations. The code handles what you tell it. The list of what you didn't tell it is yours to make. Those gaps surface at a demo, or after launch.
 
 ## Audit it the way an outsider sees it
 

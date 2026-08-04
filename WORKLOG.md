@@ -141,6 +141,19 @@ Append a dated block whenever we do blog work.
 
 ---
 
+## 2026-08-03 (session 9m — post 07 SECOND HOLE-POKING PASS, Saad: "Is it good or what? Read it and poke holes")
+
+- Verdict: good, six holes found and fixed:
+  1. **Habit 7 was re-telling the client facts a third time** (opening + habit 1 questions + habit 7 callback) → compressed to two sentences, no fact re-list: "We built the e-commerce form the way we would use it, and the client operated differently. That's the gap this habit closes."
+  2. **Habits 5 and 6 both opened with "The rebuild I described at the top"** (adjacent sections, same phrase) → habit 6 now opens "The e-commerce project is the same lesson from the other side."
+  3. **"demo is where we found out" overload** (opening + habit 1 + habit 7 + habit 8) → habit 7's callback dropped the demo; habit 8's close is now "Those gaps surface at a demo, or after launch."
+  4. Line 79 double-"and" run-on cleaned ("a background check that never ran").
+  5. Lede promise softened: "the story behind each one" → "the stories behind them" (habits 5/6/7 share the opening story).
+  6. "The second half" → "The second half of the habit".
+- **Final:** 0 em-dashes; max para 356 (house range); no AI tells; 11 leads; all facts kept; 2,238 words. devto.md rebuilt (byte-identical), PUT to draft 4304603, verified (published:false).
+
+---
+
 ## 2026-07-28 (session 8 — post 07 senior-thinking interview + first draft)
 
 - **Post 07 interview resumed** in `posts/07-senior-thinking/notes.md`. Saad supplied the core view:
