@@ -1,4 +1,56 @@
-# Blog
+# Blogs
+
+<!-- repo-hygiene: reposhuttle-standard -->
+
+**Collection of static blog pages and writing experiments.**
+
+## Overview
+
+Collection of static blog pages and writing experiments.
+
+This README records the repository's purpose, verified local workflow, major technology choices, and maintenance status so the project can be understood without first reverse-engineering the source tree.
+
+## Highlights
+
+- Implementation centered on HTML
+- Source and supporting project assets kept together for reproducibility
+
+## Tech stack
+
+HTML
+
+## Quick start
+
+Clone the repository, then use the build or run instructions provided by the project files.
+
+## Configuration
+
+No repository-specific configuration file is required for the basic workflow documented above.
+
+## Project structure
+
+```text
+pages/  # page-level routes or views
+```
+
+## Repository status
+
+This repository is maintained as a project reference and portfolio artifact.
+
+## Development
+
+Before submitting a change, run the project's available build or execution workflow and verify the affected behavior manually.
+Keep changes focused, avoid committing generated artifacts unless the project already tracks them, and update this README whenever setup or behavior changes.
+
+## Security and configuration hygiene
+
+Keep secrets in local environment variables or an ignored `.env` file. Never commit API keys, access tokens, private keys, production database URLs, or customer data. If a credential is committed, revoke and rotate it; deleting the file in a later commit does not remove it from Git history.
+
+## Contributing
+
+Open an issue or provide context before making a large change. Prefer small pull requests with a clear purpose, verification notes, and screenshots for visible UI changes.
+
+## Additional project notes
 
 Technical blog. Goal: job hunting (primary) + personal brand (secondary).
 Lane: practical AI-in-real-products, full-stack flavored.
@@ -43,3 +95,7 @@ blog/
 
 All live on [dev.to](https://dev.to/abdullahsaad5). See `PLAN.md` for the full backlog and the
 reasoning behind every decision.
+
+## License
+
+No license file is currently included. Unless the repository owner states otherwise, the source is not offered under an open-source license.
